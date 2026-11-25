@@ -2,29 +2,22 @@
 
 [![CI](https://github.com/vltanh/lean4-phylo-species-tree/actions/workflows/ci.yml/badge.svg)](https://github.com/vltanh/lean4-phylo-species-tree/actions/workflows/ci.yml)
 
-Lean 4 formalizations of the methods and theory of estimating a species tree from multilocus data,
-under incomplete lineage sorting, gene duplication, loss and transfer, and the errors of estimated gene
-trees, one paper per repository. They start with the statistical methods that infer a species tree from
-gene trees, from quartets, rooted triplets, clades and distances; continue with the methods that work
-from sequences directly, by site patterns, full likelihood or Bayesian inference, and under
-duplication, loss and transfer; then rooting, branch lengths and tests, the coalescent and the limits
-of particular estimators, and divide-and-conquer pipelines.
+Lean 4 formalizations of papers on estimating a species tree from multilocus data, under incomplete
+lineage sorting, gene duplication, loss and transfer.
 
-This repository is their hub, in the collection rooted at
-[lean4-phylogenetics](https://github.com/vltanh/lean4-phylogenetics). It holds:
+This repository is a hub of inference in the collection rooted at
+[lean4-phylogenetics](https://github.com/vltanh/lean4-phylogenetics). It holds the library
+[`PhyloSpeciesTree`](PhyloSpeciesTree), for what two or more of its papers share and the root
+library does not hold. It has no modules yet; its [README](PhyloSpeciesTree/README.md) says what
+goes there, and the catalog of the papers, [`catalog/papers.toml`](catalog/papers.toml), from which
+the tables below are generated.
 
-- the library [`PhyloSpeciesTree`](PhyloSpeciesTree), for what two papers or more of this hub share and the root library
-  does not hold. It has nothing yet: what they share so far (trees and quartets, ASTRAL's dynamic program, Kingman's coalescent and the multispecies coalescent) is in the root library.
-  Its [README](PhyloSpeciesTree/README.md) says what goes there;
-- the catalog of the papers, [`catalog/papers.toml`](catalog/papers.toml), from which the tables
-  below are generated.
-
-The [conventions](https://github.com/vltanh/lean4-phylogenetics/blob/main/docs/CONVENTIONS.md) that
-every repository follows, the [workflow](https://github.com/vltanh/lean4-phylogenetics/blob/main/docs/WORKFLOW.md),
-the registry of the repositories, the shared foundations and the tools are in the root. Each paper is
-formalized with the [formalize-math-paper](https://github.com/vltanh/formalize-math-paper) skill:
-every result the paper proves is proved by the paper's own argument, the statements are checked
-against the paper, and an audit of the paper reports its errors and gaps.
+The collection's
+[conventions](https://github.com/vltanh/lean4-phylogenetics/blob/main/docs/CONVENTIONS.md) and
+[workflow](https://github.com/vltanh/lean4-phylogenetics/blob/main/docs/WORKFLOW.md) are in the
+root. Each paper is formalized with the
+[formalize-math-paper](https://github.com/vltanh/formalize-math-paper) skill: its results are proved
+by the paper's own arguments, and an audit reports its errors and gaps.
 
 ## Status
 
@@ -48,20 +41,15 @@ against the paper, and an audit of the paper reports its errors and gaps.
 
 ## The papers
 
-Each paper is in one family, the one its method belongs to, even when it touches others. This is a
-hub of inference: the theory of a method (its identifiability, consistency and sample complexity) is
-listed with the method, and general results on the discordance of gene trees and the limits of
-species-tree inference are in
-[lean4-phylo-statistics](https://github.com/vltanh/lean4-phylo-statistics), and those on the
-amalgamation of quartets in
-[lean4-phylo-combinatorics](https://github.com/vltanh/lean4-phylo-combinatorics). The scope is
-species-tree inference from multilocus data, with the methods that bypass gene trees; supertree
-methods are in it as far as they serve species-tree inference at scale (family 9). The estimation of
-a tree from one alignment is in
-[lean4-phylo-gene-tree](https://github.com/vltanh/lean4-phylo-gene-tree), and networks, with the tree
-of blobs of a network, in [lean4-phylo-network](https://github.com/vltanh/lean4-phylo-network).
-*Uses* lists the papers, of any hub, that the paper's proofs are known to use, and the other hubs
-whose library it requires. Each paper's inventory completes the list.
+Each paper is in the family of its method, with the theory of that method; supertree methods are
+here as far as they serve species-tree inference at scale. General results on gene-tree discordance
+are in [lean4-phylo-statistics](https://github.com/vltanh/lean4-phylo-statistics), and quartet
+amalgamation in [lean4-phylo-combinatorics](https://github.com/vltanh/lean4-phylo-combinatorics).
+Trees from one alignment are in
+[lean4-phylo-gene-tree](https://github.com/vltanh/lean4-phylo-gene-tree), and networks in
+[lean4-phylo-network](https://github.com/vltanh/lean4-phylo-network). *Uses* lists the papers, of
+any hub, whose results a paper's proofs are known to use, and the other hubs whose library it
+requires.
 
 <!-- BEGIN catalog:papers -->
 <!-- Generated by lean4-phylogenetics/scripts/status.py readme --write. Do not edit. -->
@@ -232,13 +220,13 @@ Priority: highest.
 
 ## Starting a paper
 
-From [lean4-phylogenetics](https://github.com/vltanh/lean4-phylogenetics), beside this repository,
-when the paper's formalization starts:
+From [lean4-phylogenetics](https://github.com/vltanh/lean4-phylogenetics), when the paper's
+formalization starts:
 
 ```sh
-python3 scripts/status.py next              # the open papers, by priority, with what each waits on
-python3 scripts/new_paper.py astral         # creates ../lean4-astral on the train, under this hub
-cd ../lean4-astral && claude                # then: /formalize-math-paper https://doi.org/10.1093/bioinformatics/btu462
+python3 scripts/status.py next                  # the open papers, by priority
+python3 scripts/new_paper.py <id>               # creates ../papers/species-tree/lean4-<id>
+cd ../papers/species-tree/lean4-<id> && claude  # then: /formalize-math-paper <the paper's link>
 ```
 
 ## Building
@@ -250,18 +238,18 @@ lake build Phylogenetics
 lake env lean scripts/Audit.lean
 ```
 
-Lean and Mathlib `v4.37.0-rc1`; [`lakefile.toml`](lakefile.toml) requires lean4-phylogenetics by
-commit, `3fcabfd`. The audit, [`scripts/Audit.lean`](scripts/Audit.lean), checks that every
-declaration of this library and of lean4-phylogenetics depends only on Lean's standard axioms
-`propext`, `Classical.choice` and `Quot.sound`; `python3 scripts/gen_audit.py` generates its
-`import all` lines. CI runs the build and the audit, and checks that the tables above are current.
+Lean and Mathlib `v4.37.0-rc1`. [`lakefile.toml`](lakefile.toml) requires lean4-phylogenetics at the
+commits of the train. The audit, [`scripts/Audit.lean`](scripts/Audit.lean), checks that every
+declaration of this library and of the libraries it requires uses only Lean's standard axioms;
+`python3 scripts/gen_audit.py` writes its `import all` lines. CI builds the library, runs the audit,
+and checks that the tables above are current.
 
 ## Credits
 
-- **Maintainer:** The-Anh Vu-Le.
-- **Catalog and repository:** Claude Opus 5.5 (`claude-opus-5-5`, Anthropic), in Claude Code, from the
-  maintainer's list of papers, with the citations checked against Crossref.
-- **Formalization:** each paper's repository credits its own.
+- Maintainer: The-Anh Vu-Le.
+- Catalog and repository: Claude Opus 5.5 (`claude-opus-5-5`, Anthropic) in Claude Code, from the
+  maintainer's lists of papers, with the citations checked against Crossref.
+- Formalization: each paper's repository credits its own.
 
 ## License
 
