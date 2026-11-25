@@ -58,7 +58,7 @@ title = "Species-tree rooting, branch lengths, support and hypothesis testing"
 
 [[family]]
 id = 8
-title = "General statistical foundations, consistency and limitations"
+title = "Species-tree model foundations and estimator-specific limitations"
 
 [[family]]
 id = 9
@@ -86,21 +86,9 @@ covered_by = [
 ]
 
 [[paper]]
-id = "bryant2001"
-family = 1
-order = 2
-authors = "Bryant, Steel"
-year = "2001"
-title = "Constructing Optimal Trees from Quartets"
-url = "https://doi.org/10.1006/jagm.2000.1133"
-kind = "theory+algorithm"
-root = "Bryant2001"
-status = "todo"
-
-[[paper]]
 id = "qmc"
 family = 1
-order = 3
+order = 2
 short = "QMC"
 authors = "Snir, Rao"
 year = "2010"
@@ -113,7 +101,7 @@ status = "todo"
 [[paper]]
 id = "qmc-fast"
 family = 1
-order = 4
+order = 3
 authors = "Snir, Rao"
 year = "2012"
 title = "Quartet MaxCut: A Fast Algorithm for Amalgamating Quartet Trees"
@@ -124,21 +112,9 @@ status = "todo"
 builds_on = ["qmc"]
 
 [[paper]]
-id = "snir2012"
-family = 1
-order = 5
-authors = "Snir, Yuster"
-year = "2012"
-title = "Reconstructing Approximate Phylogenetic Trees from Quartet Samples"
-url = "https://doi.org/10.1137/11086964X"
-kind = "theory+algorithm"
-root = "Snir2012"
-status = "todo"
-
-[[paper]]
 id = "astral"
 family = 1
-order = 6
+order = 4
 short = "ASTRAL"
 authors = "Mirarab et al."
 year = "2014"
@@ -154,7 +130,7 @@ covered_by = [
 [[paper]]
 id = "qfm"
 family = 1
-order = 7
+order = 5
 short = "QFM"
 authors = "Reaz, Bayzid, Rahman"
 year = "2014"
@@ -167,7 +143,7 @@ status = "todo"
 [[paper]]
 id = "astral-ii"
 family = 1
-order = 8
+order = 6
 short = "ASTRAL-II"
 authors = "Mirarab, Warnow"
 year = "2015"
@@ -181,7 +157,7 @@ builds_on = ["astral"]
 [[paper]]
 id = "wqmc"
 family = 1
-order = 9
+order = 7
 short = "wQMC"
 authors = "Avni, Cohen, Snir"
 year = "2015"
@@ -195,7 +171,7 @@ builds_on = ["qmc"]
 [[paper]]
 id = "shekhar2018"
 family = 1
-order = 10
+order = 8
 authors = "Shekhar, Roch, Mirarab"
 year = "2018"
 title = "Species Tree Estimation Using ASTRAL: How Many Genes Are Enough?"
@@ -207,7 +183,7 @@ status = "todo"
 [[paper]]
 id = "astral-iii"
 family = 1
-order = 11
+order = 9
 short = "ASTRAL-III"
 authors = "Zhang et al."
 year = "2018"
@@ -219,21 +195,9 @@ status = "todo"
 builds_on = ["astral-ii"]
 
 [[paper]]
-id = "lafond2019"
-family = 1
-order = 12
-authors = "Lafond, Scornavacca"
-year = "2019"
-title = "On the Weighted Quartet Consensus Problem"
-url = "https://doi.org/10.1016/j.tcs.2018.10.005"
-kind = "theory"
-root = "Lafond2019"
-status = "todo"
-
-[[paper]]
 id = "astral-multi"
 family = 1
-order = 13
+order = 10
 short = "ASTRAL-multi"
 authors = "Rabiee, Sayyari, Mirarab"
 year = "2019"
@@ -247,7 +211,7 @@ builds_on = ["astral"]
 [[paper]]
 id = "astral-mp"
 family = 1
-order = 14
+order = 11
 short = "ASTRAL-MP"
 authors = "Yin, Zhang, Mirarab"
 year = "2019"
@@ -261,7 +225,7 @@ builds_on = ["astral-iii"]
 [[paper]]
 id = "rhodes2020"
 family = 1
-order = 15
+order = 12
 authors = "Rhodes"
 year = "2020"
 title = "Topological Metrizations of Trees, and New Quartet Methods of Tree Inference"
@@ -276,7 +240,7 @@ covered_by = [
 [[paper]]
 id = "rabiee2020"
 family = 1
-order = 16
+order = 13
 authors = "Rabiee, Mirarab"
 year = "2020"
 title = "Forcing External Constraints on Tree Inference Using ASTRAL"
@@ -289,7 +253,7 @@ builds_on = ["astral"]
 [[paper]]
 id = "mscquartets"
 family = 1
-order = 17
+order = 14
 short = "MSCquartets"
 authors = "Rhodes et al."
 year = "2021"
@@ -302,7 +266,7 @@ status = "todo"
 [[paper]]
 id = "fastral"
 family = 1
-order = 18
+order = 15
 short = "FASTRAL"
 authors = "Dibaeinia et al."
 year = "2021"
@@ -315,7 +279,7 @@ status = "todo"
 [[paper]]
 id = "wqfm"
 family = 1
-order = 19
+order = 16
 short = "wQFM"
 authors = "Mahbub et al."
 year = "2021"
@@ -329,7 +293,7 @@ builds_on = ["qfm"]
 [[paper]]
 id = "chan2022"
 family = 1
-order = 20
+order = 17
 authors = "Chan, Li, Scornavacca"
 year = "2022"
 title = "The Large-Sample Asymptotic Behaviour of Quartet-Based Summary Methods for Species Tree Inference"
@@ -341,7 +305,7 @@ status = "todo"
 [[paper]]
 id = "wastral"
 family = 1
-order = 21
+order = 18
 short = "wASTRAL"
 authors = "Zhang, Mirarab"
 year = "2022"
@@ -354,7 +318,7 @@ status = "todo"
 [[paper]]
 id = "tree-qmc"
 family = 1
-order = 22
+order = 19
 short = "TREE-QMC"
 authors = "Han, Molloy"
 year = "2023"
@@ -368,7 +332,7 @@ builds_on = ["qmc"]
 [[paper]]
 id = "weighted-tree-qmc"
 family = 1
-order = 23
+order = 20
 short = "weighted TREE-QMC"
 authors = "Han, Molloy"
 year = "2025"
@@ -382,7 +346,7 @@ builds_on = ["tree-qmc"]
 [[paper]]
 id = "aster"
 family = 1
-order = 24
+order = 21
 short = "ASTER"
 authors = "Zhang, Nielsen, Mirarab"
 year = "2025"
@@ -395,7 +359,7 @@ status = "todo"
 [[paper]]
 id = "hasan2025"
 family = 1
-order = 25
+order = 22
 authors = "Hasan et al."
 year = "2025"
 title = "Leveraging Weighted Quartet Distributions for Enhanced Species Tree Inference from Genome-Wide Data"
@@ -1427,24 +1391,9 @@ root = "Sayyari2018"
 status = "todo"
 
 [[paper]]
-id = "mitchell2019"
-family = 7
-order = 5
-authors = "Mitchell, Allman, Rhodes"
-year = "2019"
-title = "Hypothesis Testing Near Singularities and Boundaries"
-url = "https://doi.org/10.1214/19-EJS1576"
-kind = "theory"
-root = "Mitchell2019"
-status = "partial"
-covered_by = [
-  { repo = "lean4-phylo-network", what = "Theorem 3.1 for the trinomial cut model, and Propositions 4.1, 4.2, 5.1 and 5.2: the limit laws and the densities of the T3 and T1 statistics (PhyloNetwork/External/MitchellAllmanRhodes2019/)" },
-]
-
-[[paper]]
 id = "minh2020"
 family = 7
-order = 6
+order = 5
 authors = "Minh, Hahn, Lanfear"
 year = "2020"
 title = "New Methods to Calculate Concordance Factors for Phylogenomic Datasets"
@@ -1456,7 +1405,7 @@ status = "todo"
 [[paper]]
 id = "quintet-rooting"
 family = 7
-order = 7
+order = 6
 short = "Quintet Rooting"
 authors = "Tabatabaee et al."
 year = "2022"
@@ -1469,7 +1418,7 @@ status = "todo"
 [[paper]]
 id = "qr-star"
 family = 7
-order = 8
+order = 7
 short = "QR-STAR"
 authors = "Tabatabaee, Roch, Warnow"
 year = "2023"
@@ -1483,7 +1432,7 @@ builds_on = ["quintet-rooting"]
 [[paper]]
 id = "disco-qr"
 family = 7
-order = 9
+order = 8
 short = "DISCO+QR"
 authors = "Willson et al."
 year = "2023"
@@ -1497,7 +1446,7 @@ builds_on = ["disco", "quintet-rooting"]
 [[paper]]
 id = "castles"
 family = 7
-order = 10
+order = 9
 short = "CASTLES"
 authors = "Tabatabaee et al."
 year = "2023"
@@ -1510,7 +1459,7 @@ status = "todo"
 [[paper]]
 id = "adams2023"
 family = 7
-order = 11
+order = 10
 authors = "Adams, DeGiorgio"
 year = "2023"
 title = "Likelihood-Based Tests of Species Tree Hypotheses"
@@ -1522,7 +1471,7 @@ status = "todo"
 [[paper]]
 id = "castles-pro"
 family = 7
-order = 12
+order = 11
 short = "CASTLES-Pro"
 authors = "Tabatabaee et al."
 year = "2025"
@@ -1536,7 +1485,7 @@ builds_on = ["castles"]
 [[paper]]
 id = "tabatabaee2026"
 family = 7
-order = 13
+order = 12
 authors = "Tabatabaee, Claramunt, Mirarab"
 year = "2026"
 title = "Coalescent-Based Branch Length Estimation Improves Dating of Species Trees"
@@ -1546,7 +1495,7 @@ root = "Tabatabaee2026"
 status = "todo"
 
 # ---------------------------------------------------------------------------------------------
-# 8. General statistical foundations, consistency and limitations
+# 8. Species-tree model foundations and estimator-specific limitations
 # ---------------------------------------------------------------------------------------------
 
 [[paper]]
@@ -1565,105 +1514,9 @@ covered_by = [
 ]
 
 [[paper]]
-id = "takahata1989"
-family = 8
-order = 2
-authors = "Takahata"
-year = "1989"
-title = "Gene Genealogy in Three Related Populations: Consistency Probability Between Gene and Population Trees"
-url = "https://doi.org/10.1093/genetics/122.4.957"
-kind = "theory"
-root = "Takahata1989"
-status = "todo"
-
-[[paper]]
-id = "degnan2006"
-family = 8
-order = 3
-authors = "Degnan, Rosenberg"
-year = "2006"
-title = "Discordance of Species Trees with Their Most Likely Gene Trees"
-url = "https://doi.org/10.1371/journal.pgen.0020068"
-kind = "theory"
-root = "Degnan2006"
-status = "todo"
-
-[[paper]]
-id = "kubatko2007"
-family = 8
-order = 4
-authors = "Kubatko, Degnan"
-year = "2007"
-title = "Inconsistency of Phylogenetic Estimates from Concatenated Data Under Coalescence"
-url = "https://doi.org/10.1080/10635150601146041"
-kind = "theory"
-root = "Kubatko2007"
-status = "todo"
-
-[[paper]]
-id = "degnan2013"
-family = 8
-order = 5
-authors = "Degnan"
-year = "2013"
-title = "Anomalous Unrooted Gene Trees"
-url = "https://doi.org/10.1093/sysbio/syt023"
-kind = "theory"
-root = "Degnan2013"
-status = "todo"
-
-[[paper]]
-id = "roch2015"
-family = 8
-order = 6
-authors = "Roch, Steel"
-year = "2015"
-title = "Likelihood-Based Tree Reconstruction on a Concatenation of Aligned Sequence Data Sets Can Be Statistically Inconsistent"
-url = "https://doi.org/10.1016/j.tpb.2014.12.005"
-kind = "theory"
-root = "Roch2015"
-status = "todo"
-
-[[paper]]
-id = "solislemus2016"
-family = 8
-order = 7
-authors = "Solís-Lemus, Yang, Ané"
-year = "2016"
-title = "Inconsistency of Species Tree Methods Under Gene Flow"
-url = "https://doi.org/10.1093/sysbio/syw030"
-kind = "theory"
-root = "SolisLemus2016"
-status = "todo"
-
-[[paper]]
-id = "nute2018"
-family = 8
-order = 8
-authors = "Nute et al."
-year = "2018"
-title = "The Performance of Coalescent-Based Species Tree Estimation Methods Under Models of Missing Data"
-url = "https://doi.org/10.1186/s12864-018-4619-8"
-kind = "theory"
-root = "Nute2018"
-status = "todo"
-
-[[paper]]
-id = "roch2019"
-family = 8
-order = 9
-authors = "Roch, Nute, Warnow"
-year = "2019"
-title = "Long-Branch Attraction in Species Tree Estimation: Inconsistency of Partitioned Likelihood and Summary Methods"
-url = "https://doi.org/10.1093/sysbio/syy061"
-kind = "theory"
-root = "Roch2019"
-status = "todo"
-
-[[paper]]
 id = "dinh2025"
 family = 8
-order = 10
+order = 2
 authors = "Dinh, Baños"
 year = "2025"
 title = "Misspecification Strikes: ASTRAL Can Mislead in the Presence of Hybridization, Even for Nonanomalous Scenarios"
