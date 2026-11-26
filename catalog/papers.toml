@@ -30,43 +30,31 @@
 
 [[family]]
 id = 1
-title = "Quartet-based statistical species-tree inference"
+title = "Quartet inference"
 priority = "highest"
 
 [[family]]
 id = 2
-title = "Rooted triplets, clades, consensus and deep coalescences"
+title = "Other summary methods"
 
 [[family]]
 id = 3
-title = "Coalescent-aware distance and time-based inference"
+title = "Direct sequence-based inference"
 
 [[family]]
 id = 4
-title = "Site-pattern, spectral and direct sequence-based inference"
+title = "Full likelihood and Bayesian inference"
 
 [[family]]
 id = 5
-title = "Full-likelihood, Bayesian and gene-tree co-estimation"
+title = "Duplication, loss, transfer and paralogy"
 
 [[family]]
 id = 6
-title = "Species-tree inference under duplication, loss, transfer and paralogy"
-
-[[family]]
-id = 7
-title = "Species-tree rooting, branch lengths, support and hypothesis testing"
-
-[[family]]
-id = 8
-title = "Species-tree model foundations and estimator-specific limitations"
-
-[[family]]
-id = 9
-title = "Supertree-based and divide-and-conquer species-tree inference"
+title = "Rooting, branch lengths, support and general methods"
 
 # ---------------------------------------------------------------------------------------------
-# 1. Quartet-based statistical species-tree inference
+# 1. Quartet inference
 # ---------------------------------------------------------------------------------------------
 
 [[paper]]
@@ -370,8 +358,10 @@ root = "Hasan2025"
 status = "todo"
 
 # ---------------------------------------------------------------------------------------------
-# 2. Rooted triplets, clades, consensus and deep coalescences
+# 2. Other summary methods
 # ---------------------------------------------------------------------------------------------
+
+# Rooted triplets, clades, consensus and deep coalescences
 
 [[paper]]
 id = "maddison2006"
@@ -521,14 +511,12 @@ kind = "method"
 root = "Zaman2026"
 status = "todo"
 
-# ---------------------------------------------------------------------------------------------
-# 3. Coalescent-aware distance and time-based inference
-# ---------------------------------------------------------------------------------------------
+# Coalescent-aware distance and time-based inference
 
 [[paper]]
 id = "star-steac"
-family = 3
-order = 1
+family = 2
+order = 13
 short = "STAR and STEAC"
 authors = "Liu et al."
 year = "2009"
@@ -540,8 +528,8 @@ status = "todo"
 
 [[paper]]
 id = "glass"
-family = 3
-order = 2
+family = 2
+order = 14
 short = "GLASS"
 authors = "Mossel, Roch"
 year = "2010"
@@ -553,8 +541,8 @@ status = "todo"
 
 [[paper]]
 id = "njst"
-family = 3
-order = 3
+family = 2
+order = 15
 short = "NJst"
 authors = "Liu, Yu"
 year = "2011"
@@ -566,8 +554,8 @@ status = "todo"
 
 [[paper]]
 id = "helmkamp2012"
-family = 3
-order = 4
+family = 2
+order = 16
 authors = "Helmkamp, Jewett, Rosenberg"
 year = "2012"
 title = "Improvements to a Class of Distance Matrix Methods for Inferring Species Trees from Gene Trees"
@@ -578,8 +566,8 @@ status = "todo"
 
 [[paper]]
 id = "allman2013"
-family = 3
-order = 5
+family = 2
+order = 17
 authors = "Allman, Degnan, Rhodes"
 year = "2013"
 title = "Species Tree Inference by the STAR Method and Its Generalizations"
@@ -590,8 +578,8 @@ status = "todo"
 
 [[paper]]
 id = "degiorgio2014"
-family = 3
-order = 6
+family = 2
+order = 18
 authors = "DeGiorgio, Degnan"
 year = "2014"
 title = "Robustness to Divergence Time Underestimation When Inferring Species Trees from Estimated Gene Trees"
@@ -602,8 +590,8 @@ status = "todo"
 
 [[paper]]
 id = "astrid"
-family = 3
-order = 7
+family = 2
+order = 19
 short = "ASTRID"
 authors = "Vachaspati, Warnow"
 year = "2015"
@@ -615,8 +603,8 @@ status = "todo"
 
 [[paper]]
 id = "distique"
-family = 3
-order = 8
+family = 2
+order = 20
 short = "DISTIQUE"
 authors = "Sayyari, Mirarab"
 year = "2016"
@@ -628,8 +616,8 @@ status = "todo"
 
 [[paper]]
 id = "allman2018-star"
-family = 3
-order = 9
+family = 2
+order = 21
 authors = "Allman, Degnan, Rhodes"
 year = "2018"
 title = "Species Tree Inference from Gene Splits by Unrooted STAR Methods"
@@ -639,12 +627,12 @@ root = "Allman2018Star"
 status = "todo"
 
 # ---------------------------------------------------------------------------------------------
-# 4. Site-pattern, spectral and direct sequence-based inference
+# 3. Direct sequence-based inference
 # ---------------------------------------------------------------------------------------------
 
 [[paper]]
 id = "smrt"
-family = 4
+family = 3
 order = 1
 short = "SMRT"
 authors = "DeGiorgio, Degnan"
@@ -657,7 +645,7 @@ status = "todo"
 
 [[paper]]
 id = "svdquartets"
-family = 4
+family = 3
 order = 2
 short = "SVDquartets"
 authors = "Chifman, Kubatko"
@@ -670,7 +658,7 @@ status = "todo"
 
 [[paper]]
 id = "chifman2015"
-family = 4
+family = 3
 order = 3
 authors = "Chifman, Kubatko"
 year = "2015"
@@ -682,7 +670,7 @@ status = "todo"
 
 [[paper]]
 id = "metal"
-family = 4
+family = 3
 order = 4
 short = "METAL"
 authors = "Dasarathy, Nowak, Roch"
@@ -695,7 +683,7 @@ status = "todo"
 
 [[paper]]
 id = "pomo"
-family = 4
+family = 3
 order = 5
 short = "PoMo"
 authors = "De Maio et al."
@@ -708,7 +696,7 @@ status = "todo"
 
 [[paper]]
 id = "schrempf2016"
-family = 4
+family = 3
 order = 6
 authors = "Schrempf et al."
 year = "2016"
@@ -720,7 +708,7 @@ status = "todo"
 
 [[paper]]
 id = "svdquest"
-family = 4
+family = 3
 order = 7
 short = "SVDquest"
 authors = "Vachaspati, Warnow"
@@ -734,7 +722,7 @@ builds_on = ["svdquartets"]
 
 [[paper]]
 id = "long2019"
-family = 4
+family = 3
 order = 8
 authors = "Long, Kubatko"
 year = "2019"
@@ -746,7 +734,7 @@ status = "todo"
 
 [[paper]]
 id = "allman2019"
-family = 4
+family = 3
 order = 9
 authors = "Allman, Long, Rhodes"
 year = "2019"
@@ -758,7 +746,7 @@ status = "todo"
 
 [[paper]]
 id = "wascher2021"
-family = 4
+family = 3
 order = 10
 authors = "Wascher, Kubatko"
 year = "2021"
@@ -770,7 +758,7 @@ status = "todo"
 
 [[paper]]
 id = "richards2021"
-family = 4
+family = 3
 order = 11
 authors = "Richards, Kubatko"
 year = "2021"
@@ -782,7 +770,7 @@ status = "todo"
 
 [[paper]]
 id = "caster"
-family = 4
+family = 3
 order = 12
 short = "CASTER"
 authors = "Zhang, Nielsen, Mirarab"
@@ -795,7 +783,7 @@ status = "todo"
 
 [[paper]]
 id = "kubatko2025"
-family = 4
+family = 3
 order = 13
 authors = "Kubatko et al."
 year = "2025"
@@ -807,7 +795,7 @@ status = "todo"
 
 [[paper]]
 id = "waster"
-family = 4
+family = 3
 order = 14
 short = "WASTER"
 authors = "Zhang, Nielsen"
@@ -819,12 +807,12 @@ root = "Waster"
 status = "todo"
 
 # ---------------------------------------------------------------------------------------------
-# 5. Full-likelihood, Bayesian and gene-tree co-estimation
+# 4. Full likelihood and Bayesian inference
 # ---------------------------------------------------------------------------------------------
 
 [[paper]]
 id = "rannala2003"
-family = 5
+family = 4
 order = 1
 authors = "Rannala, Yang"
 year = "2003"
@@ -836,7 +824,7 @@ status = "todo"
 
 [[paper]]
 id = "degnan2005"
-family = 5
+family = 4
 order = 2
 authors = "Degnan, Salter"
 year = "2005"
@@ -851,7 +839,7 @@ covered_by = [
 
 [[paper]]
 id = "liu2007"
-family = 5
+family = 4
 order = 3
 authors = "Liu, Pearl"
 year = "2007"
@@ -863,7 +851,7 @@ status = "todo"
 
 [[paper]]
 id = "ane2007"
-family = 5
+family = 4
 order = 4
 authors = "Ané et al."
 year = "2007"
@@ -875,7 +863,7 @@ status = "todo"
 
 [[paper]]
 id = "best"
-family = 5
+family = 4
 order = 5
 short = "BEST"
 authors = "Liu"
@@ -888,7 +876,7 @@ status = "todo"
 
 [[paper]]
 id = "stem"
-family = 5
+family = 4
 order = 6
 short = "STEM"
 authors = "Kubatko, Carstens, Knowles"
@@ -901,7 +889,7 @@ status = "todo"
 
 [[paper]]
 id = "starbeast"
-family = 5
+family = 4
 order = 7
 short = "*BEAST"
 authors = "Heled, Drummond"
@@ -914,7 +902,7 @@ status = "todo"
 
 [[paper]]
 id = "bucky"
-family = 5
+family = 4
 order = 8
 short = "BUCKy"
 authors = "Larget et al."
@@ -927,7 +915,7 @@ status = "todo"
 
 [[paper]]
 id = "snapp"
-family = 5
+family = 4
 order = 9
 short = "SNAPP"
 authors = "Bryant et al."
@@ -940,7 +928,7 @@ status = "todo"
 
 [[paper]]
 id = "stells"
-family = 5
+family = 4
 order = 10
 short = "STELLS"
 authors = "Wu"
@@ -953,7 +941,7 @@ status = "todo"
 
 [[paper]]
 id = "yang2014"
-family = 5
+family = 4
 order = 11
 authors = "Yang, Rannala"
 year = "2014"
@@ -965,7 +953,7 @@ status = "todo"
 
 [[paper]]
 id = "stells2"
-family = 5
+family = 4
 order = 12
 short = "STELLS2"
 authors = "Pei, Wu"
@@ -979,7 +967,7 @@ builds_on = ["stells"]
 
 [[paper]]
 id = "rannala2017"
-family = 5
+family = 4
 order = 13
 authors = "Rannala, Yang"
 year = "2017"
@@ -991,7 +979,7 @@ status = "todo"
 
 [[paper]]
 id = "starbeast2"
-family = 5
+family = 4
 order = 14
 short = "StarBEAST2"
 authors = "Ogilvie, Bouckaert, Drummond"
@@ -1005,7 +993,7 @@ builds_on = ["starbeast"]
 
 [[paper]]
 id = "jones2017"
-family = 5
+family = 4
 order = 15
 authors = "Jones"
 year = "2017"
@@ -1017,7 +1005,7 @@ status = "todo"
 
 [[paper]]
 id = "bpp"
-family = 5
+family = 4
 order = 16
 short = "BPP"
 authors = "Flouri et al."
@@ -1030,7 +1018,7 @@ status = "todo"
 
 [[paper]]
 id = "wang2020"
-family = 5
+family = 4
 order = 17
 authors = "Wang, Ogilvie, Nakhleh"
 year = "2020"
@@ -1042,7 +1030,7 @@ status = "todo"
 
 [[paper]]
 id = "starbeast3"
-family = 5
+family = 4
 order = 18
 short = "StarBeast3"
 authors = "Douglas et al."
@@ -1056,7 +1044,7 @@ builds_on = ["starbeast2"]
 
 [[paper]]
 id = "quco"
-family = 5
+family = 4
 order = 19
 short = "QuCo"
 authors = "Rabiee, Mirarab"
@@ -1069,7 +1057,7 @@ status = "todo"
 
 [[paper]]
 id = "zhu2025"
-family = 5
+family = 4
 order = 20
 authors = "Zhu, Höhna"
 year = "2025"
@@ -1080,12 +1068,12 @@ root = "Zhu2025"
 status = "todo"
 
 # ---------------------------------------------------------------------------------------------
-# 6. Species-tree inference under duplication, loss, transfer and paralogy
+# 5. Duplication, loss, transfer and paralogy
 # ---------------------------------------------------------------------------------------------
 
 [[paper]]
 id = "duptree"
-family = 6
+family = 5
 order = 1
 short = "DupTree"
 authors = "Wehe et al."
@@ -1098,7 +1086,7 @@ status = "todo"
 
 [[paper]]
 id = "igtp"
-family = 6
+family = 5
 order = 2
 short = "iGTP"
 authors = "Chaudhary et al."
@@ -1111,7 +1099,7 @@ status = "todo"
 
 [[paper]]
 id = "rasmussen2012"
-family = 6
+family = 5
 order = 3
 authors = "Rasmussen, Kellis"
 year = "2012"
@@ -1123,7 +1111,7 @@ status = "todo"
 
 [[paper]]
 id = "boussau2013"
-family = 6
+family = 5
 order = 4
 authors = "Boussau et al."
 year = "2013"
@@ -1135,7 +1123,7 @@ status = "todo"
 
 [[paper]]
 id = "roch2013"
-family = 6
+family = 5
 order = 5
 authors = "Roch, Snir"
 year = "2013"
@@ -1147,7 +1135,7 @@ status = "todo"
 
 [[paper]]
 id = "chaudhary2013"
-family = 6
+family = 5
 order = 6
 authors = "Chaudhary et al."
 year = "2013"
@@ -1159,7 +1147,7 @@ status = "todo"
 
 [[paper]]
 id = "davidson2015"
-family = 6
+family = 5
 order = 7
 authors = "Davidson et al."
 year = "2015"
@@ -1171,7 +1159,7 @@ status = "todo"
 
 [[paper]]
 id = "daskalakis2016"
-family = 6
+family = 5
 order = 8
 authors = "Daskalakis, Roch"
 year = "2016"
@@ -1183,7 +1171,7 @@ status = "todo"
 
 [[paper]]
 id = "stag"
-family = 6
+family = 5
 order = 9
 short = "STAG"
 authors = "Emms, Kelly"
@@ -1196,7 +1184,7 @@ status = "todo"
 
 [[paper]]
 id = "astral-pro"
-family = 6
+family = 5
 order = 10
 short = "ASTRAL-Pro"
 authors = "Zhang et al."
@@ -1210,7 +1198,7 @@ builds_on = ["astral"]
 
 [[paper]]
 id = "fastmulrfs"
-family = 6
+family = 5
 order = 11
 short = "FastMulRFS"
 authors = "Molloy, Warnow"
@@ -1223,7 +1211,7 @@ status = "todo"
 
 [[paper]]
 id = "legried2021"
-family = 6
+family = 5
 order = 12
 authors = "Legried et al."
 year = "2021"
@@ -1238,7 +1226,7 @@ covered_by = [
 
 [[paper]]
 id = "markin2021"
-family = 6
+family = 5
 order = 13
 authors = "Markin, Eulenstein"
 year = "2021"
@@ -1250,7 +1238,7 @@ status = "todo"
 
 [[paper]]
 id = "astral-pro2"
-family = 6
+family = 5
 order = 14
 short = "ASTRAL-Pro 2"
 authors = "Zhang, Mirarab"
@@ -1264,7 +1252,7 @@ builds_on = ["astral-pro"]
 
 [[paper]]
 id = "disco"
-family = 6
+family = 5
 order = 15
 short = "DISCO"
 authors = "Willson et al."
@@ -1277,7 +1265,7 @@ status = "todo"
 
 [[paper]]
 id = "speciesrax"
-family = 6
+family = 5
 order = 16
 short = "SpeciesRax"
 authors = "Morel et al."
@@ -1290,7 +1278,7 @@ status = "todo"
 
 [[paper]]
 id = "hill2022"
-family = 6
+family = 5
 order = 17
 authors = "Hill, Legried, Roch"
 year = "2022"
@@ -1302,7 +1290,7 @@ status = "todo"
 
 [[paper]]
 id = "xiong2022"
-family = 6
+family = 5
 order = 18
 authors = "Xiong et al."
 year = "2022"
@@ -1314,7 +1302,7 @@ status = "todo"
 
 [[paper]]
 id = "alerax"
-family = 6
+family = 5
 order = 19
 short = "AleRax"
 authors = "Morel et al."
@@ -1327,7 +1315,7 @@ status = "todo"
 
 [[paper]]
 id = "duploss2"
-family = 6
+family = 5
 order = 20
 short = "DupLoss-2"
 authors = "Parsons, Bansal"
@@ -1339,12 +1327,14 @@ root = "DupLoss2"
 status = "todo"
 
 # ---------------------------------------------------------------------------------------------
-# 7. Species-tree rooting, branch lengths, support and hypothesis testing
+# 6. Rooting, branch lengths, support and general methods
 # ---------------------------------------------------------------------------------------------
+
+# Species-tree rooting, branch lengths, support and hypothesis testing
 
 [[paper]]
 id = "sayyari2016"
-family = 7
+family = 6
 order = 1
 authors = "Sayyari, Mirarab"
 year = "2016"
@@ -1356,7 +1346,7 @@ status = "todo"
 
 [[paper]]
 id = "stride"
-family = 7
+family = 6
 order = 2
 short = "STRIDE"
 authors = "Emms, Kelly"
@@ -1369,7 +1359,7 @@ status = "todo"
 
 [[paper]]
 id = "allman2017"
-family = 7
+family = 6
 order = 3
 authors = "Allman, Kubatko, Rhodes"
 year = "2017"
@@ -1381,7 +1371,7 @@ status = "todo"
 
 [[paper]]
 id = "sayyari2018"
-family = 7
+family = 6
 order = 4
 authors = "Sayyari, Mirarab"
 year = "2018"
@@ -1393,7 +1383,7 @@ status = "todo"
 
 [[paper]]
 id = "minh2020"
-family = 7
+family = 6
 order = 5
 authors = "Minh, Hahn, Lanfear"
 year = "2020"
@@ -1405,7 +1395,7 @@ status = "todo"
 
 [[paper]]
 id = "quintet-rooting"
-family = 7
+family = 6
 order = 6
 short = "Quintet Rooting"
 authors = "Tabatabaee et al."
@@ -1418,7 +1408,7 @@ status = "todo"
 
 [[paper]]
 id = "qr-star"
-family = 7
+family = 6
 order = 7
 short = "QR-STAR"
 authors = "Tabatabaee, Roch, Warnow"
@@ -1432,7 +1422,7 @@ builds_on = ["quintet-rooting"]
 
 [[paper]]
 id = "disco-qr"
-family = 7
+family = 6
 order = 8
 short = "DISCO+QR"
 authors = "Willson et al."
@@ -1446,7 +1436,7 @@ builds_on = ["disco", "quintet-rooting"]
 
 [[paper]]
 id = "castles"
-family = 7
+family = 6
 order = 9
 short = "CASTLES"
 authors = "Tabatabaee et al."
@@ -1459,7 +1449,7 @@ status = "todo"
 
 [[paper]]
 id = "adams2023"
-family = 7
+family = 6
 order = 10
 authors = "Adams, DeGiorgio"
 year = "2023"
@@ -1471,7 +1461,7 @@ status = "todo"
 
 [[paper]]
 id = "castles-pro"
-family = 7
+family = 6
 order = 11
 short = "CASTLES-Pro"
 authors = "Tabatabaee et al."
@@ -1485,7 +1475,7 @@ builds_on = ["castles"]
 
 [[paper]]
 id = "tabatabaee2026"
-family = 7
+family = 6
 order = 12
 authors = "Tabatabaee, Claramunt, Mirarab"
 year = "2026"
@@ -1495,14 +1485,12 @@ kind = "method"
 root = "Tabatabaee2026"
 status = "todo"
 
-# ---------------------------------------------------------------------------------------------
-# 8. Species-tree model foundations and estimator-specific limitations
-# ---------------------------------------------------------------------------------------------
+# Species-tree model foundations and estimator-specific limitations
 
 [[paper]]
 id = "kingman1982"
-family = 8
-order = 1
+family = 6
+order = 13
 authors = "Kingman"
 year = "1982"
 title = "The Coalescent"
@@ -1516,8 +1504,8 @@ covered_by = [
 
 [[paper]]
 id = "dinh2025"
-family = 8
-order = 2
+family = 6
+order = 14
 authors = "Dinh, Baños"
 year = "2025"
 title = "Misspecification Strikes: ASTRAL Can Mislead in the Presence of Hybridization, Even for Nonanomalous Scenarios"
@@ -1529,14 +1517,12 @@ covered_by = [
   { repo = "lean4-tob-qmc", what = "Theorem 1 and Corollary 2, on the 5-cycle of Figure 1(d) rooted on a hybrid edge (TobQmc/External/DinhBanos2025/)" },
 ]
 
-# ---------------------------------------------------------------------------------------------
-# 9. Supertree-based and divide-and-conquer species-tree inference
-# ---------------------------------------------------------------------------------------------
+# Supertree-based and divide-and-conquer species-tree inference
 
 [[paper]]
 id = "supertriplets"
-family = 9
-order = 1
+family = 6
+order = 15
 short = "SuperTriplets"
 authors = "Ranwez et al."
 year = "2010"
@@ -1548,8 +1534,8 @@ status = "todo"
 
 [[paper]]
 id = "fastrfs"
-family = 9
-order = 2
+family = 6
+order = 16
 short = "FastRFS"
 authors = "Vachaspati, Warnow"
 year = "2017"
@@ -1561,8 +1547,8 @@ status = "todo"
 
 [[paper]]
 id = "njmerge"
-family = 9
-order = 3
+family = 6
+order = 17
 short = "NJMerge"
 authors = "Molloy, Warnow"
 year = "2019"
@@ -1574,8 +1560,8 @@ status = "todo"
 
 [[paper]]
 id = "treemerge"
-family = 9
-order = 4
+family = 6
+order = 18
 short = "TreeMerge"
 authors = "Molloy, Warnow"
 year = "2019"
