@@ -152,7 +152,7 @@ in [lean4-phylo-network](https://github.com/formal-phylogenetics/lean4-phylo-net
 - [ ] Rasmussen, Kellis (2012), [Unified Modeling of Gene Duplication, Loss, and Coalescence Using a Locus Tree](https://doi.org/10.1101/gr.123901.111)
 - [ ] Boussau et al. (2013), [Genome-Scale Coestimation of Species and Gene Trees](https://doi.org/10.1101/gr.141978.112)
 - [ ] Roch, Snir (2013), [Recovering the Treelike Trend of Evolution Despite Extensive Lateral Genetic Transfer: A Probabilistic Analysis](https://doi.org/10.1089/cmb.2012.0234)
-- [ ] Chaudhary et al. (2013), [Inferring Species Trees from Incongruent Multi-Copy Gene Trees Using the Robinson–Foulds Distance](https://doi.org/10.1186/1748-7188-8-28)
+- [ ] Chaudhary et al. (2013), [Inferring Species Trees from Incongruent Multi-Copy Gene Trees Using the Robinson-Foulds Distance](https://doi.org/10.1186/1748-7188-8-28)
 - [ ] Davidson et al. (2015), [Phylogenomic Species Tree Estimation in the Presence of Incomplete Lineage Sorting and Horizontal Gene Transfer](https://doi.org/10.1186/1471-2164-16-S10-S1)
 - [ ] Daskalakis, Roch (2016), [Species Trees from Gene Trees Despite a High Rate of Lateral Genetic Transfer: A Tight Bound](https://doi.org/10.1137/1.9781611974331.ch110)
 - [ ] Emms, Kelly (2018), [STAG: Species Tree Inference from All Genes](https://doi.org/10.1101/267914)
@@ -191,7 +191,7 @@ in [lean4-phylo-network](https://github.com/formal-phylogenetics/lean4-phylo-net
 ### 9. Supertree-based and divide-and-conquer species-tree inference
 
 - [ ] Ranwez et al. (2010), [SuperTriplets: A Triplet-Based Supertree Approach to Phylogenomics](https://doi.org/10.1093/bioinformatics/btq196)
-- [ ] Vachaspati, Warnow (2017), [FastRFS: Fast and Accurate Robinson–Foulds Supertrees Using Constrained Exact Optimization](https://doi.org/10.1093/bioinformatics/btw600)
+- [ ] Vachaspati, Warnow (2017), [FastRFS: Fast and Accurate Robinson-Foulds Supertrees Using Constrained Exact Optimization](https://doi.org/10.1093/bioinformatics/btw600)
 - [ ] Molloy, Warnow (2019), [Statistically Consistent Divide-and-Conquer Pipelines for Phylogeny Estimation Using NJMerge](https://doi.org/10.1186/s13015-019-0151-x)
 - [ ] Molloy, Warnow (2019), [TreeMerge: A New Method for Improving the Scalability of Species Tree Estimation Methods](https://doi.org/10.1093/bioinformatics/btz344)
 
