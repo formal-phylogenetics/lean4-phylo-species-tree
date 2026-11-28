@@ -31,10 +31,10 @@ by the paper's own arguments, and an audit reports its errors and gaps.
 | [2. Other summary methods](#2-other-summary-methods) | 35 | 0 | 0 | 0 | 35 |
 | [3. Direct sequence-based inference](#3-direct-sequence-based-inference) | 17 | 0 | 0 | 0 | 17 |
 | [4. Full likelihood and Bayesian inference](#4-full-likelihood-and-bayesian-inference) | 42 | 0 | 0 | 0 | 42 |
-| [5. Duplication, loss, transfer and paralogy](#5-duplication-loss-transfer-and-paralogy) | 96 | 0 | 0 | 1 | 95 |
+| [5. Duplication, loss, transfer and paralogy](#5-duplication-loss-transfer-and-paralogy) | 95 | 0 | 0 | 1 | 94 |
 | [6. Rooting, branch lengths, support and general methods](#6-rooting-branch-lengths-support-and-general-methods) | 23 | 0 | 0 | 0 | 23 |
 | [7. Supertrees and tree merging](#7-supertrees-and-tree-merging) | 38 | 0 | 0 | 0 | 38 |
-| **All** | **280** | **0** | **0** | **3** | **277** |
+| **All** | **279** | **0** | **0** | **3** | **276** |
 
 <!-- END catalog:summary -->
 
@@ -284,7 +284,6 @@ in [lean4-phylo-network](https://github.com/formal-phylogenetics/lean4-phylo-net
 - [ ] Parsons et al. (2026), [On correctness of gene tree tagging under a unified model of gene duplication, loss, and coalescence](https://doi.org/10.64898/2026.01.20.700722)
 - [ ] Turner et al. (2026), [OrthoGarden: a pipeline for propagating phylogenetic trees for nonmodel organisms from short reads and de novo genome assemblies](https://doi.org/10.1093/molbev/msag053)
 - [ ] Wu (2026), [SplitAligner: A Gene-Species Tree Reconciliation Framework Using Split-Based Branch Mapping](https://doi.org/10.64898/2026.02.24.707838)
-- [ ] random-notes contributors (2026), [The spectrum of deep-coalescence diameters of rooted phylogenetic trees](https://github.com/vltanh/random-notes/blob/a73a2fb931a0634acb83ce236fa458dcaf59d50f/deep-coalescence/paper.tex)
 
 ### 6. Rooting, branch lengths, support and general methods
 

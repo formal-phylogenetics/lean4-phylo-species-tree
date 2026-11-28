@@ -3,10 +3,10 @@
 # one.
 #
 # Started on 2026-11-25 from the maintainer's checklist. The families, their papers and the order of
-# the papers in each, by year, are those of the maintainer's catalogue of the field (2026-11-28).
-# The citations of the entries made before it were checked against Crossref; the others are the
-# catalogue's. Each formalization records the exact citation in its Phase 0, and corrects the entry
-# here.
+# the papers in each, by year, are those of the maintainer's catalogue of the field (2026-11-28),
+# but for its drafts, which are not published. The citations of the entries made before it were
+# checked against Crossref; the others are the catalogue's. Each formalization records the exact
+# citation in its Phase 0, and corrects the entry here.
 #
 # Fields of a paper:
 #   id          the repository is lean4-<id>: the method's name in lower case when the paper names
@@ -2789,18 +2789,6 @@ title = "SplitAligner: A Gene-Species Tree Reconciliation Framework Using Split-
 url = "https://doi.org/10.64898/2026.02.24.707838"
 kind = "method"
 root = "Splitaligner"
-status = "todo"
-
-[[paper]]
-id = "deep-coalescence"
-family = 5
-order = 96
-authors = "random-notes contributors"
-year = "2026"
-title = "The spectrum of deep-coalescence diameters of rooted phylogenetic trees"
-url = "https://github.com/vltanh/random-notes/blob/a73a2fb931a0634acb83ce236fa458dcaf59d50f/deep-coalescence/paper.tex"
-kind = "theory"
-root = "DeepCoalescence"
 status = "todo"
 
 # ---------------------------------------------------------------------------------------------
