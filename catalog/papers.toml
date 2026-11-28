@@ -30,8 +30,8 @@
 #               before the paper's inventory; its Phase 1 completes the list here
 #   covered_by  what is already formalized, and where
 #   note        anything else
-#   landmark    true for a landmark of the field, on the maintainer's catalogue's shorter route
-#               through it
+#   starred     true for a starred paper, on the maintainer's catalogue's shorter route through
+#               the field
 
 [[family]]
 id = 1
@@ -102,7 +102,7 @@ url = "https://doi.org/10.1093/bioinformatics/btu462"
 kind = "method"
 root = "Astral"
 status = "partial"
-landmark = true
+starred = true
 covered_by = [
   { repo = "lean4-phylogenetics", what = "the constrained dynamic program of Section 2 and the optimality part of Theorem 1: its output has the largest quartet score among the binary trees with the allowed bipartitions (Phylogenetics/Tree/AstralDP.lean)" },
 ]
@@ -146,7 +146,7 @@ url = "https://doi.org/10.1186/s12859-018-2129-y"
 kind = "method"
 root = "AstralIII"
 status = "todo"
-landmark = true
+starred = true
 builds_on = ["astral-ii"]
 
 [[paper]]
@@ -172,7 +172,7 @@ url = "https://doi.org/10.1109/TCBB.2017.2757930"
 kind = "theory"
 root = "Shekhar2018"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "astral-mp"
@@ -319,7 +319,7 @@ url = "https://doi.org/10.1101/gr.277629.122"
 kind = "method"
 root = "TreeQmc"
 status = "todo"
-landmark = true
+starred = true
 builds_on = ["qmc"]
 
 [[paper]]
@@ -504,7 +504,7 @@ url = "https://doi.org/10.1093/sysbio/syp031"
 kind = "method"
 root = "StarSteac"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "degnan2009"
@@ -542,7 +542,7 @@ url = "https://doi.org/10.1186/1471-2148-10-302"
 kind = "method"
 root = "MpEst"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "glass"
@@ -727,7 +727,7 @@ url = "https://doi.org/10.1186/1471-2164-16-S10-S3"
 kind = "method"
 root = "Astrid"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "ullah2015"
@@ -931,7 +931,7 @@ url = "https://doi.org/10.1093/bioinformatics/btu530"
 kind = "method"
 root = "SvdQuartets"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "metal"
@@ -1147,7 +1147,7 @@ url = "https://doi.org/10.1073/pnas.0607004104"
 kind = "method"
 root = "Edwards2007"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "liu2007"
@@ -1224,7 +1224,7 @@ url = "https://doi.org/10.1093/molbev/msp274"
 kind = "method"
 root = "StarBeast"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "bucky"
@@ -1264,7 +1264,7 @@ url = "https://doi.org/10.1093/molbev/mss086"
 kind = "method"
 root = "Snapp"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "heled2013"
@@ -2063,7 +2063,7 @@ url = "https://doi.org/10.1101/gr.123901.111"
 kind = "theory+algorithm"
 root = "Rasmussen2012"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "szollosi2013"
@@ -2258,7 +2258,7 @@ url = "https://doi.org/10.1093/sysbio/syv082"
 kind = "method"
 root = "Simphy"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "daskalakis2016"
@@ -2491,7 +2491,7 @@ url = "https://doi.org/10.1186/s13059-019-1832-y"
 kind = "method"
 root = "Orthofinder"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "astral-pro"
@@ -2505,7 +2505,7 @@ url = "https://doi.org/10.1093/molbev/msaa139"
 kind = "method"
 root = "AstralPro"
 status = "todo"
-landmark = true
+starred = true
 builds_on = ["astral"]
 
 [[paper]]
@@ -3114,7 +3114,7 @@ url = "https://doi.org/10.2307/1222480"
 kind = "method"
 root = "Baum1992"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "ragan1992"
@@ -3127,7 +3127,7 @@ url = "https://doi.org/10.1016/1055-7903(92)90035-f"
 kind = "method"
 root = "Ragan1992"
 status = "todo"
-landmark = true
+starred = true
 
 [[paper]]
 id = "steel2000-supertrees"
