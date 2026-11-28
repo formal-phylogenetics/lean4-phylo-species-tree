@@ -1,15 +1,18 @@
 # The papers of this hub, one [[paper]] per repository to be, grouped by family of methods:
-# estimating species trees from multilocus data.
+# estimating species trees from multilocus data, and merging trees on overlapping sets of taxa into
+# one.
 #
-# Started on 2026-11-25 from the maintainer's checklist. Authors, years, titles and links are the
-# checklist's, checked against Crossref, which gave the links that the checklist lacked. Each
-# formalization records the exact citation in its Phase 0, and corrects the entry here.
+# Started on 2026-11-25 from the maintainer's checklist. The families, their papers and the order of
+# the papers in each, by year, are those of the maintainer's catalogue of the field (2026-11-28).
+# The citations of the entries made before it were checked against Crossref; the others are the
+# catalogue's. Each formalization records the exact citation in its Phase 0, and corrects the entry
+# here.
 #
 # Fields of a paper:
 #   id          the repository is lean4-<id>: the method's name in lower case when the paper names
 #               one, otherwise first author and year, with a keyword when two papers would share it
 #   family      the [[family]] it belongs to (each paper is in exactly one)
-#   order       its place in the family, by priority
+#   order       its place in the family, by year
 #   short       the method's name, when it has one
 #   kind        "theory" (an identifiability, consistency or characterization theorem),
 #               "theory+algorithm", or "method"
@@ -53,57 +56,42 @@ title = "Duplication, loss, transfer and paralogy"
 id = 6
 title = "Rooting, branch lengths, support and general methods"
 
+[[family]]
+id = 7
+title = "Supertrees and tree merging"
+
 # ---------------------------------------------------------------------------------------------
 # 1. Quartet inference
 # ---------------------------------------------------------------------------------------------
 
 [[paper]]
-id = "allman2011"
+id = "willson1999"
 family = 1
 order = 1
-authors = "Allman, Degnan, Rhodes"
-year = "2011"
-title = "Identifying the Rooted Species Tree from the Distribution of Unrooted Gene Trees Under the Coalescent"
-url = "https://doi.org/10.1007/s00285-010-0355-7"
-kind = "theory"
-root = "Allman2011"
-repo = "lean4-allman2011"
-status = "formalized"
-commit = "d4ada2c6cbbb5b8629eb9740dc5d5a9984a06a78"
-covered_by = [
-  { repo = "lean4-phylogenetics", what = "its general parts: Kingman's coalescent with the probabilities `g_ij` and Tavaré's formula, the multispecies coalescent, coalescent histories and the polynomiality of gene tree probabilities (Section 3), and the determination of an unrooted tree by its quartets (Phylogenetics/Coalescent/, Phylogenetics/MSC/, Phylogenetics/Hierarchy/Quartets.lean)" },
-]
+authors = "Willson"
+year = "1999"
+title = "Building Phylogenetic Trees from Quartets by Using Local Inconsistency Measures"
+url = "https://doi.org/10.1093/oxfordjournals.molbev.a026151"
+kind = "method"
+root = "Willson1999"
+status = "todo"
 
 [[paper]]
-id = "qmc"
+id = "kreidl2011-species"
 family = 1
 order = 2
-short = "QMC"
-authors = "Snir, Rao"
-year = "2010"
-title = "Quartets MaxCut: A Divide and Conquer Quartets Algorithm"
-url = "https://doi.org/10.1109/TCBB.2008.133"
+authors = "Kreidl"
+year = "2011"
+title = "Estimating Species Trees from Quartet Gene Tree Distributions under the Coalescent Model"
+url = "https://arxiv.org/abs/1108.1628"
 kind = "method"
-root = "Qmc"
+root = "Kreidl2011Species"
 status = "todo"
-
-[[paper]]
-id = "qmc-fast"
-family = 1
-order = 3
-authors = "Snir, Rao"
-year = "2012"
-title = "Quartet MaxCut: A Fast Algorithm for Amalgamating Quartet Trees"
-url = "https://doi.org/10.1016/j.ympev.2011.06.021"
-kind = "method"
-root = "QmcFast"
-status = "todo"
-builds_on = ["qmc"]
 
 [[paper]]
 id = "astral"
 family = 1
-order = 4
+order = 3
 short = "ASTRAL"
 authors = "Mirarab et al."
 year = "2014"
@@ -117,22 +105,9 @@ covered_by = [
 ]
 
 [[paper]]
-id = "qfm"
-family = 1
-order = 5
-short = "QFM"
-authors = "Reaz, Bayzid, Rahman"
-year = "2014"
-title = "Accurate Phylogenetic Tree Reconstruction from Quartets: A Heuristic Approach"
-url = "https://doi.org/10.1371/journal.pone.0104008"
-kind = "method"
-root = "Qfm"
-status = "todo"
-
-[[paper]]
 id = "astral-ii"
 family = 1
-order = 6
+order = 4
 short = "ASTRAL-II"
 authors = "Mirarab, Warnow"
 year = "2015"
@@ -144,18 +119,43 @@ status = "todo"
 builds_on = ["astral"]
 
 [[paper]]
-id = "wqmc"
+id = "distique"
+family = 1
+order = 5
+short = "DISTIQUE"
+authors = "Sayyari, Mirarab"
+year = "2016"
+title = "Anchoring Quartet-Based Phylogenetic Distances and Applications to Species Tree Reconstruction"
+url = "https://doi.org/10.1186/s12864-016-3098-z"
+kind = "method"
+root = "Distique"
+status = "todo"
+
+[[paper]]
+id = "astral-iii"
+family = 1
+order = 6
+short = "ASTRAL-III"
+authors = "Zhang et al."
+year = "2018"
+title = "ASTRAL-III: Polynomial Time Species Tree Reconstruction from Partially Resolved Gene Trees"
+url = "https://doi.org/10.1186/s12859-018-2129-y"
+kind = "method"
+root = "AstralIII"
+status = "todo"
+builds_on = ["astral-ii"]
+
+[[paper]]
+id = "davidson2018"
 family = 1
 order = 7
-short = "wQMC"
-authors = "Avni, Cohen, Snir"
-year = "2015"
-title = "Weighted Quartets Phylogenetics"
-url = "https://doi.org/10.1093/sysbio/syu087"
-kind = "method"
-root = "Wqmc"
+authors = "Davidson et al."
+year = "2018"
+title = "Efficient Quartet Representations of Trees and Applications to Supertree and Summary Methods"
+url = "https://doi.org/10.1109/tcbb.2016.2638911"
+kind = "theory+algorithm"
+root = "Davidson2018"
 status = "todo"
-builds_on = ["qmc"]
 
 [[paper]]
 id = "shekhar2018"
@@ -170,18 +170,18 @@ root = "Shekhar2018"
 status = "todo"
 
 [[paper]]
-id = "astral-iii"
+id = "astral-mp"
 family = 1
 order = 9
-short = "ASTRAL-III"
-authors = "Zhang et al."
-year = "2018"
-title = "ASTRAL-III: Polynomial Time Species Tree Reconstruction from Partially Resolved Gene Trees"
-url = "https://doi.org/10.1186/s12859-018-2129-y"
+short = "ASTRAL-MP"
+authors = "Yin, Zhang, Mirarab"
+year = "2019"
+title = "ASTRAL-MP: Scaling ASTRAL to Very Large Datasets Using Randomization and Parallelization"
+url = "https://doi.org/10.1093/bioinformatics/btz211"
 kind = "method"
-root = "AstralIII"
+root = "AstralMp"
 status = "todo"
-builds_on = ["astral-ii"]
+builds_on = ["astral-iii"]
 
 [[paper]]
 id = "astral-multi"
@@ -198,38 +198,9 @@ status = "todo"
 builds_on = ["astral"]
 
 [[paper]]
-id = "astral-mp"
-family = 1
-order = 11
-short = "ASTRAL-MP"
-authors = "Yin, Zhang, Mirarab"
-year = "2019"
-title = "ASTRAL-MP: Scaling ASTRAL to Very Large Datasets Using Randomization and Parallelization"
-url = "https://doi.org/10.1093/bioinformatics/btz211"
-kind = "method"
-root = "AstralMp"
-status = "todo"
-builds_on = ["astral-iii"]
-
-[[paper]]
-id = "rhodes2020"
-family = 1
-order = 12
-authors = "Rhodes"
-year = "2020"
-title = "Topological Metrizations of Trees, and New Quartet Methods of Tree Inference"
-url = "https://doi.org/10.1109/TCBB.2019.2917204"
-kind = "theory+algorithm"
-root = "Rhodes2020"
-status = "partial"
-covered_by = [
-  { repo = "lean4-phylo-network", what = "Theorem 2, the quartet distance is a tree metric with the topology of the tree, and the weight of an internal edge is at least 2 (PhyloNetwork/External/Rhodes2020/)" },
-]
-
-[[paper]]
 id = "rabiee2020"
 family = 1
-order = 13
+order = 11
 authors = "Rabiee, Mirarab"
 year = "2020"
 title = "Forcing External Constraints on Tree Inference Using ASTRAL"
@@ -242,7 +213,7 @@ builds_on = ["astral"]
 [[paper]]
 id = "mscquartets"
 family = 1
-order = 14
+order = 12
 short = "MSCquartets"
 authors = "Rhodes et al."
 year = "2021"
@@ -253,9 +224,24 @@ root = "MscQuartets"
 status = "todo"
 
 [[paper]]
+id = "rhodes2020"
+family = 1
+order = 13
+authors = "Rhodes"
+year = "2020"
+title = "Topological Metrizations of Trees, and New Quartet Methods of Tree Inference"
+url = "https://doi.org/10.1109/TCBB.2019.2917204"
+kind = "theory+algorithm"
+root = "Rhodes2020"
+status = "partial"
+covered_by = [
+  { repo = "lean4-phylo-network", what = "Theorem 2, the quartet distance is a tree metric with the topology of the tree, and the weight of an internal edge is at least 2 (PhyloNetwork/External/Rhodes2020/)" },
+]
+
+[[paper]]
 id = "fastral"
 family = 1
-order = 15
+order = 14
 short = "FASTRAL"
 authors = "Dibaeinia et al."
 year = "2021"
@@ -268,7 +254,7 @@ status = "todo"
 [[paper]]
 id = "wqfm"
 family = 1
-order = 16
+order = 15
 short = "wQFM"
 authors = "Mahbub et al."
 year = "2021"
@@ -278,6 +264,18 @@ kind = "method"
 root = "Wqfm"
 status = "todo"
 builds_on = ["qfm"]
+
+[[paper]]
+id = "liu2022"
+family = 1
+order = 16
+authors = "Liu, Warnow"
+year = "2022"
+title = "Scalable Species Tree Inference with External Constraints."
+url = "https://doi.org/10.1089/cmb.2021.0543"
+kind = "theory+algorithm"
+root = "Liu2022"
+status = "todo"
 
 [[paper]]
 id = "chan2022"
@@ -319,9 +317,48 @@ status = "todo"
 builds_on = ["qmc"]
 
 [[paper]]
-id = "weighted-tree-qmc"
+id = "qt-weaver"
 family = 1
 order = 20
+short = "QT-WEAVER"
+authors = "Hasan, Sohaib, Bayzid"
+year = "2024"
+title = "QT-WEAVER: Correcting quartet distribution improves phylogenomic analyses despite gene tree estimation error"
+url = "https://doi.org/10.1101/2024.11.11.622962"
+kind = "method"
+root = "QtWeaver"
+status = "todo"
+
+[[paper]]
+id = "wqfm-tree"
+family = 1
+order = 21
+short = "wQFM-TREE"
+authors = "Rafi et al."
+year = "2024"
+title = "wQFM-TREE: highly accurate and scalable quartet-based species tree inference from gene trees"
+url = "https://doi.org/10.1093/bioadv/vbaf053"
+kind = "method"
+root = "WqfmTree"
+status = "todo"
+
+[[paper]]
+id = "aster"
+family = 1
+order = 22
+short = "ASTER"
+authors = "Zhang, Nielsen, Mirarab"
+year = "2025"
+title = "ASTER: A Package for Large-Scale Phylogenomic Reconstructions"
+url = "https://doi.org/10.1093/molbev/msaf172"
+kind = "method"
+root = "Aster"
+status = "todo"
+
+[[paper]]
+id = "weighted-tree-qmc"
+family = 1
+order = 23
 short = "weighted TREE-QMC"
 authors = "Han, Molloy"
 year = "2025"
@@ -333,22 +370,9 @@ status = "todo"
 builds_on = ["tree-qmc"]
 
 [[paper]]
-id = "aster"
-family = 1
-order = 21
-short = "ASTER"
-authors = "Zhang, Nielsen, Mirarab"
-year = "2025"
-title = "ASTER: A Package for Large-Scale Phylogenomic Reconstructions"
-url = "https://doi.org/10.1093/molbev/msaf172"
-kind = "method"
-root = "Aster"
-status = "todo"
-
-[[paper]]
 id = "hasan2025"
 family = 1
-order = 22
+order = 24
 authors = "Hasan et al."
 year = "2025"
 title = "Leveraging Weighted Quartet Distributions for Enhanced Species Tree Inference from Genome-Wide Data"
@@ -357,11 +381,74 @@ kind = "method"
 root = "Hasan2025"
 status = "todo"
 
+[[paper]]
+id = "pickme"
+family = 1
+order = 25
+short = "PickMe"
+authors = "Rusinko et al."
+year = "2025"
+title = "PickMe : Sample Selection for Species Tree Reconstruction using Coalescent Weighted Quartets"
+url = "https://doi.org/10.1093/sysbio/syaf017"
+kind = "method"
+root = "Pickme"
+status = "todo"
+
+[[paper]]
+id = "astral-x"
+family = 1
+order = 26
+short = "ASTRAL-X"
+authors = "Saha, Bayzid"
+year = "2026"
+title = "ASTRAL-X: Scaling Coalescent-Based Species Tree Inference to 300,000 Taxa"
+url = "https://doi.org/10.64898/2026.07.31.742122"
+kind = "theory+algorithm"
+root = "AstralX"
+status = "todo"
+
+[[paper]]
+id = "qraft"
+family = 1
+order = 27
+short = "QRAFT"
+authors = "Rahman, Saha, Bayzid"
+year = "2026"
+title = "QRAFT: Scaling coalescent-based species tree inference to one million taxa"
+url = "https://doi.org/10.64898/2026.11.05.764586"
+kind = "theory+algorithm"
+root = "Qraft"
+status = "todo"
+
+[[paper]]
+id = "quanta"
+family = 1
+order = 28
+short = "QUANTA"
+authors = "Mondal, Bayzid"
+year = "2026"
+title = "QUANTA: A quantum annealing framework for species tree estimation using weighted quartet amalgamation"
+url = "https://doi.org/10.64898/2026.11.05.764558"
+kind = "theory+algorithm"
+root = "Quanta"
+status = "todo"
+
+[[paper]]
+id = "steq"
+family = 1
+order = 29
+short = "STEQ"
+authors = "Saha et al."
+year = "2026"
+title = "STEQ: A statistically consistent quartet distance based species tree estimation method"
+url = "https://doi.org/10.64898/2026.02.27.708511"
+kind = "theory+algorithm"
+root = "Steq"
+status = "todo"
+
 # ---------------------------------------------------------------------------------------------
 # 2. Other summary methods
 # ---------------------------------------------------------------------------------------------
-
-# Rooted triplets, clades, consensus and deep coalescences
 
 [[paper]]
 id = "maddison2006"
@@ -376,9 +463,21 @@ root = "Maddison2006"
 status = "todo"
 
 [[paper]]
-id = "ewing2008"
+id = "carstens2007"
 family = 2
 order = 2
+authors = "Carstens, Knowles"
+year = "2007"
+title = "Estimating Species Phylogeny from Gene-Tree Probabilities Despite Incomplete Lineage Sorting: An Example from Melanoplus Grasshoppers"
+url = "https://doi.org/10.1080/10635150701405560"
+kind = "theory+algorithm"
+root = "Carstens2007"
+status = "todo"
+
+[[paper]]
+id = "ewing2008"
+family = 2
+order = 3
 authors = "Ewing et al."
 year = "2008"
 title = "Rooted Triple Consensus and Anomalous Gene Trees"
@@ -388,9 +487,22 @@ root = "Ewing2008"
 status = "todo"
 
 [[paper]]
+id = "star-steac"
+family = 2
+order = 4
+short = "STAR and STEAC"
+authors = "Liu et al."
+year = "2009"
+title = "Estimating Species Phylogenies Using Coalescence Times Among Sequences"
+url = "https://doi.org/10.1093/sysbio/syp031"
+kind = "method"
+root = "StarSteac"
+status = "todo"
+
+[[paper]]
 id = "degnan2009"
 family = 2
-order = 3
+order = 5
 authors = "Degnan et al."
 year = "2009"
 title = "Properties of Consensus Methods for Inferring Species Trees from Gene Trees"
@@ -402,7 +514,7 @@ status = "todo"
 [[paper]]
 id = "than2009"
 family = 2
-order = 4
+order = 6
 authors = "Than, Nakhleh"
 year = "2009"
 title = "Species Tree Inference by Minimizing Deep Coalescences"
@@ -414,7 +526,7 @@ status = "todo"
 [[paper]]
 id = "mp-est"
 family = 2
-order = 5
+order = 7
 short = "MP-EST"
 authors = "Liu, Yu, Edwards"
 year = "2010"
@@ -425,33 +537,22 @@ root = "MpEst"
 status = "todo"
 
 [[paper]]
-id = "allman2011-clades"
+id = "glass"
 family = 2
-order = 6
-authors = "Allman, Degnan, Rhodes"
-year = "2011"
-title = "Determining Species Tree Topologies from Clade Probabilities Under the Coalescent"
-url = "https://doi.org/10.1016/j.jtbi.2011.08.006"
-kind = "theory"
-root = "Allman2011Clades"
-status = "todo"
-
-[[paper]]
-id = "than2011"
-family = 2
-order = 7
-authors = "Than, Rosenberg"
-year = "2011"
-title = "Consistency Properties of Species Tree Inference by Minimizing Deep Coalescences"
-url = "https://doi.org/10.1089/cmb.2010.0102"
-kind = "theory"
-root = "Than2011"
+order = 8
+short = "GLASS"
+authors = "Mossel, Roch"
+year = "2010"
+title = "Incomplete Lineage Sorting: Consistent Phylogeny Estimation from Multiple Loci"
+url = "https://doi.org/10.1109/TCBB.2008.66"
+kind = "theory+algorithm"
+root = "Glass"
 status = "todo"
 
 [[paper]]
 id = "yu2011"
 family = 2
-order = 8
+order = 9
 authors = "Yu, Warnow, Nakhleh"
 year = "2011"
 title = "Algorithms for MDC-Based Multi-Locus Phylogeny Inference: Beyond Rooted Binary Gene Trees on Single Alleles"
@@ -461,9 +562,228 @@ root = "Yu2011"
 status = "todo"
 
 [[paper]]
+id = "than2011"
+family = 2
+order = 10
+authors = "Than, Rosenberg"
+year = "2011"
+title = "Consistency Properties of Species Tree Inference by Minimizing Deep Coalescences"
+url = "https://doi.org/10.1089/cmb.2010.0102"
+kind = "theory"
+root = "Than2011"
+status = "todo"
+
+[[paper]]
+id = "allman2011-clades"
+family = 2
+order = 11
+authors = "Allman, Degnan, Rhodes"
+year = "2011"
+title = "Determining Species Tree Topologies from Clade Probabilities Under the Coalescent"
+url = "https://doi.org/10.1016/j.jtbi.2011.08.006"
+kind = "theory"
+root = "Allman2011Clades"
+status = "todo"
+
+[[paper]]
+id = "njst"
+family = 2
+order = 12
+short = "NJst"
+authors = "Liu, Yu"
+year = "2011"
+title = "Estimating Species Trees from Unrooted Gene Trees"
+url = "https://doi.org/10.1093/sysbio/syr027"
+kind = "method"
+root = "Njst"
+status = "todo"
+
+[[paper]]
+id = "zhang2011"
+family = 2
+order = 13
+authors = "Zhang"
+year = "2011"
+title = "From Gene Trees to Species Trees II: Species Tree Inference by Minimizing Deep Coalescence Events"
+url = "https://doi.org/10.1109/tcbb.2011.83"
+kind = "theory+algorithm"
+root = "Zhang2011"
+status = "todo"
+
+[[paper]]
+id = "lin2012"
+family = 2
+order = 14
+authors = "Lin, Burleigh, Eulenstein"
+year = "2012"
+title = "Consensus properties for the deep coalescence problem and their application for scalable tree search"
+url = "https://doi.org/10.1186/1471-2105-13-s10-s12"
+kind = "theory+algorithm"
+root = "Lin2012"
+status = "todo"
+
+[[paper]]
+id = "gorecki2012-deep"
+family = 2
+order = 15
+authors = "Górecki, Eulenstein"
+year = "2012"
+title = "Deep Coalescence Reconciliation with Unrooted Gene Trees: Linear Time Algorithms"
+url = "https://doi.org/10.1007/978-3-642-32241-9_45"
+kind = "theory+algorithm"
+root = "Gorecki2012Deep"
+status = "todo"
+
+[[paper]]
+id = "bayzid2012"
+family = 2
+order = 16
+authors = "Bayzid, Warnow"
+year = "2012"
+title = "Estimating optimal species trees from incomplete gene trees under deep coalescence."
+url = "https://doi.org/10.1089/cmb.2012.0037"
+kind = "theory+algorithm"
+root = "Bayzid2012"
+status = "todo"
+
+[[paper]]
+id = "iglass"
+family = 2
+order = 17
+short = "iGLASS"
+authors = "Jewett, Rosenberg"
+year = "2012"
+title = "iGLASS: An Improvement to the GLASS Method for Estimating Species Trees from Gene Trees"
+url = "https://doi.org/10.1089/cmb.2011.0231"
+kind = "theory+algorithm"
+root = "Iglass"
+status = "todo"
+
+[[paper]]
+id = "helmkamp2012"
+family = 2
+order = 18
+authors = "Helmkamp, Jewett, Rosenberg"
+year = "2012"
+title = "Improvements to a Class of Distance Matrix Methods for Inferring Species Trees from Gene Trees"
+url = "https://doi.org/10.1089/cmb.2012.0042"
+kind = "theory+algorithm"
+root = "Helmkamp2012"
+status = "todo"
+
+[[paper]]
+id = "than2013"
+family = 2
+order = 19
+authors = "Than, Rosenberg"
+year = "2013"
+title = "Mathematical properties of the deep coalescence cost"
+url = "https://doi.org/10.1109/tcbb.2012.133"
+kind = "theory"
+root = "Than2013"
+status = "todo"
+
+[[paper]]
+id = "allman2013"
+family = 2
+order = 20
+authors = "Allman, Degnan, Rhodes"
+year = "2013"
+title = "Species Tree Inference by the STAR Method and Its Generalizations"
+url = "https://doi.org/10.1089/cmb.2012.0101"
+kind = "theory"
+root = "Allman2013"
+status = "todo"
+
+[[paper]]
+id = "degiorgio2014"
+family = 2
+order = 21
+authors = "DeGiorgio, Degnan"
+year = "2014"
+title = "Robustness to Divergence Time Underestimation When Inferring Species Trees from Estimated Gene Trees"
+url = "https://doi.org/10.1093/sysbio/syt059"
+kind = "theory"
+root = "DeGiorgio2014"
+status = "todo"
+
+[[paper]]
+id = "astrid"
+family = 2
+order = 22
+short = "ASTRID"
+authors = "Vachaspati, Warnow"
+year = "2015"
+title = "ASTRID: Accurate Species Trees from Internode Distances"
+url = "https://doi.org/10.1186/1471-2164-16-S10-S3"
+kind = "method"
+root = "Astrid"
+status = "todo"
+
+[[paper]]
+id = "ullah2015"
+family = 2
+order = 23
+authors = "Ullah, Parviainen, Lagergren"
+year = "2015"
+title = "Species Tree Inference Using a Mixture Model."
+url = "https://doi.org/10.1093/molbev/msv115"
+kind = "theory+algorithm"
+root = "Ullah2015"
+status = "todo"
+
+[[paper]]
+id = "bhattacharyya2016-accumulated"
+family = 2
+order = 24
+authors = "Bhattacharyya, Mukhopadhyay"
+year = "2016"
+title = "Accumulated Coalescence Rank and Excess Gene Count for Species Tree Inference"
+url = "https://doi.org/10.1007/978-3-319-38827-4_8"
+kind = "method"
+root = "Bhattacharyya2016Accumulated"
+status = "todo"
+
+[[paper]]
+id = "dasarathy2017"
+family = 2
+order = 25
+authors = "Dasarathy et al."
+year = "2017"
+title = "Coalescent-based species tree estimation: a stochastic Farris transform"
+url = "https://arxiv.org/abs/1707.04300"
+kind = "method"
+root = "Dasarathy2017"
+status = "todo"
+
+[[paper]]
+id = "rusinko2017"
+family = 2
+order = 26
+authors = "Rusinko, McPartlon"
+year = "2017"
+title = "Species tree estimation using Neighbor Joining"
+url = "https://doi.org/10.1016/j.jtbi.2016.11.005"
+kind = "theory+algorithm"
+root = "Rusinko2017"
+status = "todo"
+
+[[paper]]
+id = "allman2018-star"
+family = 2
+order = 27
+authors = "Allman, Degnan, Rhodes"
+year = "2018"
+title = "Species Tree Inference from Gene Splits by Unrooted STAR Methods"
+url = "https://doi.org/10.1109/TCBB.2016.2604812"
+kind = "theory+algorithm"
+root = "Allman2018Star"
+status = "todo"
+
+[[paper]]
 id = "allman2018-splits"
 family = 2
-order = 9
+order = 28
 authors = "Allman, Degnan, Rhodes"
 year = "2018"
 title = "Split Probabilities and Species Tree Inference Under the Multispecies Coalescent Model"
@@ -475,7 +795,7 @@ status = "todo"
 [[paper]]
 id = "stelar"
 family = 2
-order = 10
+order = 29
 short = "STELAR"
 authors = "Islam et al."
 year = "2020"
@@ -486,9 +806,59 @@ root = "Stelar"
 status = "todo"
 
 [[paper]]
+id = "reconcils"
+family = 2
+order = 30
+short = "reconcILS"
+authors = "Mishra, Smith, Hahn"
+year = "2023"
+title = "reconcILS: A gene tree-species tree reconciliation algorithm that allows for incomplete lineage sorting"
+url = "https://doi.org/10.1101/2023.11.03.565544"
+kind = "method"
+root = "Reconcils"
+status = "todo"
+
+[[paper]]
+id = "liu2023-weighted"
+family = 2
+order = 31
+authors = "Liu, Warnow"
+year = "2023"
+title = "Weighted ASTRID: fast and accurate species trees from weighted internode distances"
+url = "https://doi.org/10.1186/s13015-023-00230-6"
+kind = "theory+algorithm"
+root = "Liu2023Weighted"
+status = "todo"
+
+[[paper]]
+id = "dist"
+family = 2
+order = 32
+short = "DIST"
+authors = "de Jong, Janke"
+year = "2025"
+title = "DIST: Distance-based Inference of Species Trees"
+url = "https://doi.org/10.1101/2025.05.02.651899"
+kind = "theory+algorithm"
+root = "Dist"
+status = "todo"
+
+[[paper]]
+id = "alver2025"
+family = 2
+order = 33
+authors = "Alver, Christensen, Degnan"
+year = "2025"
+title = "Improvement to GLASS/Maximum Tree Method of Species Tree Inference Using Measurement Error Modified Single Linkage Clustering."
+url = "https://doi.org/10.1109/tcbbio.2025.3531790"
+kind = "theory+algorithm"
+root = "Alver2025"
+status = "todo"
+
+[[paper]]
 id = "stelar-x"
 family = 2
-order = 11
+order = 34
 short = "STELAR-X"
 authors = "Saha, Bayzid"
 year = "2026"
@@ -502,128 +872,13 @@ builds_on = ["stelar"]
 [[paper]]
 id = "zaman2026"
 family = 2
-order = 12
+order = 35
 authors = "Zaman et al."
 year = "2026"
 title = "Triplet-Based Species Tree Estimation: Sensitivity to Gene Tree Rooting (or Lack Thereof)"
 url = "https://doi.org/10.1371/journal.pcbi.1014782"
 kind = "method"
 root = "Zaman2026"
-status = "todo"
-
-# Coalescent-aware distance and time-based inference
-
-[[paper]]
-id = "star-steac"
-family = 2
-order = 13
-short = "STAR and STEAC"
-authors = "Liu et al."
-year = "2009"
-title = "Estimating Species Phylogenies Using Coalescence Times Among Sequences"
-url = "https://doi.org/10.1093/sysbio/syp031"
-kind = "method"
-root = "StarSteac"
-status = "todo"
-
-[[paper]]
-id = "glass"
-family = 2
-order = 14
-short = "GLASS"
-authors = "Mossel, Roch"
-year = "2010"
-title = "Incomplete Lineage Sorting: Consistent Phylogeny Estimation from Multiple Loci"
-url = "https://doi.org/10.1109/TCBB.2008.66"
-kind = "theory+algorithm"
-root = "Glass"
-status = "todo"
-
-[[paper]]
-id = "njst"
-family = 2
-order = 15
-short = "NJst"
-authors = "Liu, Yu"
-year = "2011"
-title = "Estimating Species Trees from Unrooted Gene Trees"
-url = "https://doi.org/10.1093/sysbio/syr027"
-kind = "method"
-root = "Njst"
-status = "todo"
-
-[[paper]]
-id = "helmkamp2012"
-family = 2
-order = 16
-authors = "Helmkamp, Jewett, Rosenberg"
-year = "2012"
-title = "Improvements to a Class of Distance Matrix Methods for Inferring Species Trees from Gene Trees"
-url = "https://doi.org/10.1089/cmb.2012.0042"
-kind = "theory+algorithm"
-root = "Helmkamp2012"
-status = "todo"
-
-[[paper]]
-id = "allman2013"
-family = 2
-order = 17
-authors = "Allman, Degnan, Rhodes"
-year = "2013"
-title = "Species Tree Inference by the STAR Method and Its Generalizations"
-url = "https://doi.org/10.1089/cmb.2012.0101"
-kind = "theory"
-root = "Allman2013"
-status = "todo"
-
-[[paper]]
-id = "degiorgio2014"
-family = 2
-order = 18
-authors = "DeGiorgio, Degnan"
-year = "2014"
-title = "Robustness to Divergence Time Underestimation When Inferring Species Trees from Estimated Gene Trees"
-url = "https://doi.org/10.1093/sysbio/syt059"
-kind = "theory"
-root = "DeGiorgio2014"
-status = "todo"
-
-[[paper]]
-id = "astrid"
-family = 2
-order = 19
-short = "ASTRID"
-authors = "Vachaspati, Warnow"
-year = "2015"
-title = "ASTRID: Accurate Species Trees from Internode Distances"
-url = "https://doi.org/10.1186/1471-2164-16-S10-S3"
-kind = "method"
-root = "Astrid"
-status = "todo"
-
-[[paper]]
-id = "distique"
-family = 2
-order = 20
-short = "DISTIQUE"
-authors = "Sayyari, Mirarab"
-year = "2016"
-title = "Anchoring Quartet-Based Phylogenetic Distances and Applications to Species Tree Reconstruction"
-url = "https://doi.org/10.1186/s12864-016-3098-z"
-kind = "method"
-root = "Distique"
-status = "todo"
-
-[[paper]]
-id = "allman2018-star"
-family = 2
-order = 21
-authors = "Allman, Degnan, Rhodes"
-year = "2018"
-title = "Species Tree Inference from Gene Splits by Unrooted STAR Methods"
-url = "https://doi.org/10.1109/TCBB.2016.2604812"
-kind = "theory+algorithm"
-root = "Allman2018Star"
 status = "todo"
 
 # ---------------------------------------------------------------------------------------------
@@ -644,9 +899,21 @@ root = "Smrt"
 status = "todo"
 
 [[paper]]
-id = "svdquartets"
+id = "ane2011"
 family = 3
 order = 2
+authors = "Ané"
+year = "2011"
+title = "Detecting Phylogenetic Breakpoints and Discordance from Genome-Wide Alignments for Species Tree Reconstruction"
+url = "https://doi.org/10.1093/gbe/evr013"
+kind = "method"
+root = "Ane2011"
+status = "todo"
+
+[[paper]]
+id = "svdquartets"
+family = 3
+order = 3
 short = "SVDquartets"
 authors = "Chifman, Kubatko"
 year = "2014"
@@ -654,18 +921,6 @@ title = "Quartet Inference from SNP Data Under the Coalescent Model"
 url = "https://doi.org/10.1093/bioinformatics/btu530"
 kind = "method"
 root = "SvdQuartets"
-status = "todo"
-
-[[paper]]
-id = "chifman2015"
-family = 3
-order = 3
-authors = "Chifman, Kubatko"
-year = "2015"
-title = "Identifiability of the Unrooted Species Tree Topology Under the Coalescent Model with Time-Reversible Substitution Processes, Site-Specific Rate Variation, and Invariable Sites"
-url = "https://doi.org/10.1016/j.jtbi.2015.03.006"
-kind = "theory"
-root = "Chifman2015"
 status = "todo"
 
 [[paper]]
@@ -682,9 +937,21 @@ root = "Metal"
 status = "todo"
 
 [[paper]]
-id = "pomo"
+id = "chifman2015"
 family = 3
 order = 5
+authors = "Chifman, Kubatko"
+year = "2015"
+title = "Identifiability of the Unrooted Species Tree Topology Under the Coalescent Model with Time-Reversible Substitution Processes, Site-Specific Rate Variation, and Invariable Sites"
+url = "https://doi.org/10.1016/j.jtbi.2015.03.006"
+kind = "theory"
+root = "Chifman2015"
+status = "todo"
+
+[[paper]]
+id = "pomo"
+family = 3
+order = 6
 short = "PoMo"
 authors = "De Maio et al."
 year = "2015"
@@ -697,7 +964,7 @@ status = "todo"
 [[paper]]
 id = "schrempf2016"
 family = 3
-order = 6
+order = 7
 authors = "Schrempf et al."
 year = "2016"
 title = "Reversible Polymorphism-Aware Phylogenetic Models and Their Application to Tree Inference"
@@ -709,7 +976,7 @@ status = "todo"
 [[paper]]
 id = "svdquest"
 family = 3
-order = 7
+order = 8
 short = "SVDquest"
 authors = "Vachaspati, Warnow"
 year = "2018"
@@ -723,7 +990,7 @@ builds_on = ["svdquartets"]
 [[paper]]
 id = "long2019"
 family = 3
-order = 8
+order = 9
 authors = "Long, Kubatko"
 year = "2019"
 title = "Identifiability and Reconstructibility of Species Phylogenies Under a Modified Coalescent"
@@ -735,7 +1002,7 @@ status = "todo"
 [[paper]]
 id = "allman2019"
 family = 3
-order = 9
+order = 10
 authors = "Allman, Long, Rhodes"
 year = "2019"
 title = "Species Tree Inference from Genomic Sequences Using the Log-Det Distance"
@@ -745,21 +1012,21 @@ root = "Allman2019"
 status = "todo"
 
 [[paper]]
-id = "wascher2021"
+id = "springer2020"
 family = 3
-order = 10
-authors = "Wascher, Kubatko"
-year = "2021"
-title = "Consistency of SVDQuartets and Maximum Likelihood for Coalescent-Based Species Tree Estimation"
-url = "https://doi.org/10.1093/sysbio/syaa039"
-kind = "theory"
-root = "Wascher2021"
+order = 11
+authors = "Springer et al."
+year = "2020"
+title = "ILS-Aware Analysis of Low-Homoplasy Retroelement Insertions: Inference of Species Trees and Introgression Using Quartets."
+url = "https://doi.org/10.1093/jhered/esz076"
+kind = "theory+algorithm"
+root = "Springer2020"
 status = "todo"
 
 [[paper]]
 id = "richards2021"
 family = 3
-order = 11
+order = 12
 authors = "Richards, Kubatko"
 year = "2021"
 title = "Bayesian-Weighted Triplet and Quartet Methods for Species Tree Inference"
@@ -769,9 +1036,34 @@ root = "Richards2021"
 status = "todo"
 
 [[paper]]
+id = "wascher2021"
+family = 3
+order = 13
+authors = "Wascher, Kubatko"
+year = "2021"
+title = "Consistency of SVDQuartets and Maximum Likelihood for Coalescent-Based Species Tree Estimation"
+url = "https://doi.org/10.1093/sysbio/syaa039"
+kind = "theory"
+root = "Wascher2021"
+status = "todo"
+
+[[paper]]
+id = "svdquintets"
+family = 3
+order = 14
+short = "SVDquintets"
+authors = "Richards"
+year = "2022"
+title = "SVDquintets: a New Tool for Species Tree Inference"
+url = "https://doi.org/10.1101/2022.06.01.494348"
+kind = "theory+algorithm"
+root = "Svdquintets"
+status = "todo"
+
+[[paper]]
 id = "caster"
 family = 3
-order = 12
+order = 15
 short = "CASTER"
 authors = "Zhang, Nielsen, Mirarab"
 year = "2025"
@@ -784,7 +1076,7 @@ status = "todo"
 [[paper]]
 id = "kubatko2025"
 family = 3
-order = 13
+order = 16
 authors = "Kubatko et al."
 year = "2025"
 title = "The Promise of Composite Likelihood for Species-Level Phylogenomic Inference"
@@ -796,7 +1088,7 @@ status = "todo"
 [[paper]]
 id = "waster"
 family = 3
-order = 14
+order = 17
 short = "WASTER"
 authors = "Zhang, Nielsen"
 year = "2026"
@@ -823,36 +1115,9 @@ root = "Rannala2003"
 status = "todo"
 
 [[paper]]
-id = "degnan2005"
-family = 4
-order = 2
-authors = "Degnan, Salter"
-year = "2005"
-title = "Gene Tree Distributions Under the Coalescent Process"
-url = "https://doi.org/10.1111/j.0014-3820.2005.tb00891.x"
-kind = "theory+algorithm"
-root = "Degnan2005"
-status = "partial"
-covered_by = [
-  { repo = "lean4-phylogenetics", what = "the form of their formula: the probability of a gene tree is a sum over coalescent histories of products of the `g_ij`, with positive rational coefficients, in the form of Allman, Degnan, Rhodes 2011, Section 3; their coefficients are not computed (Phylogenetics/MSC/History.lean)" },
-]
-
-[[paper]]
-id = "liu2007"
-family = 4
-order = 3
-authors = "Liu, Pearl"
-year = "2007"
-title = "Species Trees from Gene Trees: Reconstructing Bayesian Posterior Distributions of a Species Phylogeny Using Estimated Gene Tree Distributions"
-url = "https://doi.org/10.1080/10635150701429982"
-kind = "method"
-root = "Liu2007"
-status = "todo"
-
-[[paper]]
 id = "ane2007"
 family = 4
-order = 4
+order = 2
 authors = "Ané et al."
 year = "2007"
 title = "Bayesian Estimation of Concordance Among Gene Trees"
@@ -862,9 +1127,46 @@ root = "Ane2007"
 status = "todo"
 
 [[paper]]
-id = "best"
+id = "edwards2007"
+family = 4
+order = 3
+authors = "Edwards, Liu, Pearl"
+year = "2007"
+title = "High-resolution species trees without concatenation."
+url = "https://doi.org/10.1073/pnas.0607004104"
+kind = "method"
+root = "Edwards2007"
+status = "todo"
+
+[[paper]]
+id = "liu2007"
+family = 4
+order = 4
+authors = "Liu, Pearl"
+year = "2007"
+title = "Species Trees from Gene Trees: Reconstructing Bayesian Posterior Distributions of a Species Phylogeny Using Estimated Gene Tree Distributions"
+url = "https://doi.org/10.1080/10635150701429982"
+kind = "method"
+root = "Liu2007"
+status = "todo"
+
+[[paper]]
+id = "augist"
 family = 4
 order = 5
+short = "AUGIST"
+authors = "Oliver"
+year = "2008"
+title = "AUGIST: inferring species trees while accommodating gene tree uncertainty"
+url = "https://doi.org/10.1093/bioinformatics/btn556"
+kind = "method"
+root = "Augist"
+status = "todo"
+
+[[paper]]
+id = "best"
+family = 4
+order = 6
 short = "BEST"
 authors = "Liu"
 year = "2008"
@@ -875,9 +1177,21 @@ root = "Best"
 status = "todo"
 
 [[paper]]
+id = "liu2008"
+family = 4
+order = 7
+authors = "Liu et al."
+year = "2008"
+title = "Estimating species trees using multiple-allele DNA sequence data."
+url = "https://doi.org/10.1111/j.1558-5646.2008.00414.x"
+kind = "theory+algorithm"
+root = "Liu2008"
+status = "todo"
+
+[[paper]]
 id = "stem"
 family = 4
-order = 6
+order = 8
 short = "STEM"
 authors = "Kubatko, Carstens, Knowles"
 year = "2009"
@@ -890,7 +1204,7 @@ status = "todo"
 [[paper]]
 id = "starbeast"
 family = 4
-order = 7
+order = 9
 short = "*BEAST"
 authors = "Heled, Drummond"
 year = "2010"
@@ -903,7 +1217,7 @@ status = "todo"
 [[paper]]
 id = "bucky"
 family = 4
-order = 8
+order = 10
 short = "BUCKy"
 authors = "Larget et al."
 year = "2010"
@@ -914,22 +1228,9 @@ root = "Bucky"
 status = "todo"
 
 [[paper]]
-id = "snapp"
-family = 4
-order = 9
-short = "SNAPP"
-authors = "Bryant et al."
-year = "2012"
-title = "Inferring Species Trees Directly from Biallelic Genetic Markers: Bypassing Gene Trees in a Full Coalescent Analysis"
-url = "https://doi.org/10.1093/molbev/mss086"
-kind = "method"
-root = "Snapp"
-status = "todo"
-
-[[paper]]
 id = "stells"
 family = 4
-order = 10
+order = 11
 short = "STELLS"
 authors = "Wu"
 year = "2012"
@@ -940,9 +1241,46 @@ root = "Stells"
 status = "todo"
 
 [[paper]]
+id = "snapp"
+family = 4
+order = 12
+short = "SNAPP"
+authors = "Bryant et al."
+year = "2012"
+title = "Inferring Species Trees Directly from Biallelic Genetic Markers: Bypassing Gene Trees in a Full Coalescent Analysis"
+url = "https://doi.org/10.1093/molbev/mss086"
+kind = "method"
+root = "Snapp"
+status = "todo"
+
+[[paper]]
+id = "heled2013"
+family = 4
+order = 13
+authors = "Heled, Bryant, Drummond"
+year = "2013"
+title = "Simulating gene trees under the multispecies coalescent and time-dependent migration"
+url = "https://doi.org/10.1186/1471-2148-13-44"
+kind = "method"
+root = "Heled2013"
+status = "todo"
+
+[[paper]]
+id = "jones2014"
+family = 4
+order = 14
+authors = "Jones"
+year = "2014"
+title = "Species delimitation and phylogeny estimation under the multispecies coalescent"
+url = "https://doi.org/10.1101/010199"
+kind = "method"
+root = "Jones2014"
+status = "todo"
+
+[[paper]]
 id = "yang2014"
 family = 4
-order = 11
+order = 15
 authors = "Yang, Rannala"
 year = "2014"
 title = "Unguided Species Delimitation Using DNA Sequence Data from Multiple Loci"
@@ -952,23 +1290,81 @@ root = "Yang2014"
 status = "todo"
 
 [[paper]]
-id = "stells2"
+id = "staab2015"
 family = 4
-order = 12
-short = "STELLS2"
-authors = "Pei, Wu"
-year = "2017"
-title = "STELLS2: Fast and Accurate Coalescent-Based Maximum Likelihood Inference of Species Trees from Gene Tree Topologies"
-url = "https://doi.org/10.1093/bioinformatics/btx079"
+order = 16
+authors = "Staab et al."
+year = "2015"
+title = "scrm: efficiently simulating long sequences using the approximated coalescent with recombination"
+url = "https://doi.org/10.1093/bioinformatics/btu861"
 kind = "method"
-root = "Stells2"
+root = "Staab2015"
 status = "todo"
-builds_on = ["stells"]
+
+[[paper]]
+id = "martins2015"
+family = 4
+order = 17
+authors = "Martins, Posada"
+year = "2015"
+title = "Species Tree Estimation from Genome-wide Data with Guenomu"
+url = "https://doi.org/10.1101/023861"
+kind = "theory+algorithm"
+root = "Martins2015"
+status = "todo"
+
+[[paper]]
+id = "yang2015"
+family = 4
+order = 18
+authors = "Yang"
+year = "2015"
+title = "The BPP program for species tree estimation and species delimitation"
+url = "https://doi.org/10.1093/czoolo/61.5.854"
+kind = "method"
+root = "Yang2015"
+status = "todo"
+
+[[paper]]
+id = "wu2016"
+family = 4
+order = 19
+authors = "Wu"
+year = "2016"
+title = "An algorithm for computing the gene tree probability under the multispecies coalescent and its application in the inference of population tree"
+url = "https://doi.org/10.1093/bioinformatics/btw261"
+kind = "theory+algorithm"
+root = "Wu2016"
+status = "todo"
+
+[[paper]]
+id = "jones2017"
+family = 4
+order = 20
+authors = "Jones"
+year = "2017"
+title = "Algorithmic Improvements to Species Delimitation and Phylogeny Estimation Under the Multispecies Coalescent"
+url = "https://doi.org/10.1007/s00285-016-1034-0"
+kind = "method"
+root = "Jones2017"
+status = "todo"
+
+[[paper]]
+id = "jones2017-divergence"
+family = 4
+order = 21
+authors = "Jones"
+year = "2017"
+title = "Divergence estimation in the presence of incomplete lineage sorting and migration"
+url = "https://doi.org/10.1101/174342"
+kind = "theory+algorithm"
+root = "Jones2017Divergence"
+status = "todo"
 
 [[paper]]
 id = "rannala2017"
 family = 4
-order = 13
+order = 22
 authors = "Rannala, Yang"
 year = "2017"
 title = "Efficient Bayesian Species Tree Inference Under the Multispecies Coalescent"
@@ -978,9 +1374,21 @@ root = "Rannala2017"
 status = "todo"
 
 [[paper]]
+id = "alanzi2017"
+family = 4
+order = 23
+authors = "Alanzi, Degnan"
+year = "2017"
+title = "Inferring rooted species trees from unrooted gene trees using approximate Bayesian computation."
+url = "https://doi.org/10.1016/j.ympev.2017.07.017"
+kind = "theory+algorithm"
+root = "Alanzi2017"
+status = "todo"
+
+[[paper]]
 id = "starbeast2"
 family = 4
-order = 14
+order = 24
 short = "StarBEAST2"
 authors = "Ogilvie, Bouckaert, Drummond"
 year = "2017"
@@ -992,21 +1400,35 @@ status = "todo"
 builds_on = ["starbeast"]
 
 [[paper]]
-id = "jones2017"
+id = "stells2"
 family = 4
-order = 15
-authors = "Jones"
+order = 25
+short = "STELLS2"
+authors = "Pei, Wu"
 year = "2017"
-title = "Algorithmic Improvements to Species Delimitation and Phylogeny Estimation Under the Multispecies Coalescent"
-url = "https://doi.org/10.1007/s00285-016-1034-0"
+title = "STELLS2: Fast and Accurate Coalescent-Based Maximum Likelihood Inference of Species Trees from Gene Tree Topologies"
+url = "https://doi.org/10.1093/bioinformatics/btx079"
 kind = "method"
-root = "Jones2017"
+root = "Stells2"
+status = "todo"
+builds_on = ["stells"]
+
+[[paper]]
+id = "hey2018"
+family = 4
+order = 26
+authors = "Hey et al."
+year = "2018"
+title = "Phylogeny Estimation by Integration over Isolation with Migration Models"
+url = "https://doi.org/10.1093/molbev/msy162"
+kind = "method"
+root = "Hey2018"
 status = "todo"
 
 [[paper]]
 id = "bpp"
 family = 4
-order = 16
+order = 27
 short = "BPP"
 authors = "Flouri et al."
 year = "2018"
@@ -1017,9 +1439,46 @@ root = "Bpp"
 status = "todo"
 
 [[paper]]
+id = "wang2018"
+family = 4
+order = 28
+authors = "Wang, Nakhleh"
+year = "2018"
+title = "Towards an accurate and efficient heuristic for species/gene tree co‐estimation"
+url = "https://doi.org/10.1093/bioinformatics/bty599"
+kind = "method"
+root = "Wang2018"
+status = "todo"
+
+[[paper]]
+id = "coal-phyre"
+family = 4
+order = 29
+short = "COAL_PHYRE"
+authors = "Guerra, Nielsen"
+year = "2020"
+title = "COAL_PHYRE: A Composite Likelihood Method for Estimating Species Tree Parameters from Genomic Data Using Coalescent Theory"
+url = "https://doi.org/10.1101/2020.11.17.387399"
+kind = "theory+algorithm"
+root = "CoalPhyre"
+status = "todo"
+
+[[paper]]
+id = "koch2020"
+family = 4
+order = 30
+authors = "Koch, DeGiorgio"
+year = "2020"
+title = "Maximum Likelihood Estimation of Species Trees from Gene Trees in the Presence of Ancestral Population Structure"
+url = "https://doi.org/10.1093/gbe/evaa022"
+kind = "method"
+root = "Koch2020"
+status = "todo"
+
+[[paper]]
 id = "wang2020"
 family = 4
-order = 17
+order = 31
 authors = "Wang, Ogilvie, Nakhleh"
 year = "2020"
 title = "Practical Speedup of Bayesian Inference of Species Phylogenies by Restricting the Space of Gene Trees"
@@ -1029,9 +1488,71 @@ root = "Wang2020"
 status = "todo"
 
 [[paper]]
+id = "pranc"
+family = 4
+order = 32
+short = "PRANC"
+authors = "Kim, Degnan"
+year = "2020"
+title = "PRANC: ML species tree estimation from the ranked gene trees under coalescence."
+url = "https://doi.org/10.1093/bioinformatics/btaa605"
+kind = "theory+algorithm"
+root = "Pranc"
+status = "todo"
+
+[[paper]]
+id = "stoltz2021"
+family = 4
+order = 33
+authors = "Stoltz et al."
+year = "2021"
+title = "Bayesian Inference of Species Trees using Diffusion Models."
+url = "https://doi.org/10.1093/sysbio/syaa051"
+kind = "method"
+root = "Stoltz2021"
+status = "todo"
+
+[[paper]]
+id = "bouckaert2022"
+family = 4
+order = 34
+authors = "Bouckaert"
+year = "2022"
+title = "An Efficient Coalescent Epoch Model for Bayesian Phylogenetic Inference"
+url = "https://doi.org/10.1093/sysbio/syac015"
+kind = "theory+algorithm"
+root = "Bouckaert2022"
+status = "todo"
+
+[[paper]]
+id = "flouri2022"
+family = 4
+order = 35
+authors = "Flouri et al."
+year = "2022"
+title = "Bayesian Phylogenetic Inference using Relaxed-clocks and the Multispecies Coalescent"
+url = "https://doi.org/10.1093/molbev/msac161"
+kind = "theory+algorithm"
+root = "Flouri2022"
+status = "todo"
+
+[[paper]]
+id = "quco"
+family = 4
+order = 36
+short = "QuCo"
+authors = "Rabiee, Mirarab"
+year = "2022"
+title = "QuCo: Quartet-Based Co-Estimation of Species Trees and Gene Trees"
+url = "https://doi.org/10.1093/bioinformatics/btac265"
+kind = "method"
+root = "QuCo"
+status = "todo"
+
+[[paper]]
 id = "starbeast3"
 family = 4
-order = 18
+order = 37
 short = "StarBeast3"
 authors = "Douglas et al."
 year = "2022"
@@ -1043,22 +1564,33 @@ status = "todo"
 builds_on = ["starbeast2"]
 
 [[paper]]
-id = "quco"
+id = "flouri2023"
 family = 4
-order = 19
-short = "QuCo"
-authors = "Rabiee, Mirarab"
-year = "2022"
-title = "QuCo: Quartet-Based Co-Estimation of Species Trees and Gene Trees"
-url = "https://doi.org/10.1093/bioinformatics/btac265"
+order = 38
+authors = "Flouri et al."
+year = "2023"
+title = "Efficient Bayesian inference under the multispecies coalescent with migration"
+url = "https://doi.org/10.1073/pnas.2310708120"
 kind = "method"
-root = "QuCo"
+root = "Flouri2023"
+status = "todo"
+
+[[paper]]
+id = "chen2025"
+family = 4
+order = 39
+authors = "Chen, Kubatko"
+year = "2025"
+title = "Composite Likelihood Adjustment in Bayesian Inference for Estimating Species Tree Parameters Under the Multispecies Coalescent"
+url = "https://doi.org/10.1101/2025.10.20.683470"
+kind = "method"
+root = "Chen2025"
 status = "todo"
 
 [[paper]]
 id = "zhu2025"
 family = 4
-order = 20
+order = 40
 authors = "Zhu, Höhna"
 year = "2025"
 title = "Two-Step Species Tree Inference Under the Multispecies Coalescent Using Full-Likelihood"
@@ -1067,14 +1599,194 @@ kind = "method"
 root = "Zhu2025"
 status = "todo"
 
+[[paper]]
+id = "shao2026"
+family = 4
+order = 41
+authors = "Shao et al."
+year = "2026"
+title = "Parallel algorithms for phylogenetic inference under a structured coalescent approximation"
+url = "https://doi.org/10.1073/pnas.2602412123"
+kind = "theory+algorithm"
+root = "Shao2026"
+status = "todo"
+
+[[paper]]
+id = "flouri2026"
+family = 4
+order = 42
+authors = "Flouri et al."
+year = "2026"
+title = "Scaling up Bayesian population phylogenomics through virtual dimension reduction"
+url = "https://doi.org/10.1038/s41467-026-71057-z"
+kind = "method"
+root = "Flouri2026"
+status = "todo"
+
 # ---------------------------------------------------------------------------------------------
 # 5. Duplication, loss, transfer and paralogy
 # ---------------------------------------------------------------------------------------------
 
 [[paper]]
-id = "duptree"
+id = "page1997"
 family = 5
 order = 1
+authors = "Page, Charleston"
+year = "1997"
+title = "From Gene to Organismal Phylogeny: Reconciled Trees and the Gene Tree/Species Tree Problem"
+url = "https://doi.org/10.1006/mpev.1996.0390"
+kind = "method"
+root = "Page1997"
+status = "todo"
+
+[[paper]]
+id = "eulenstein1998"
+family = 5
+order = 2
+authors = "Eulenstein et al."
+year = "1998"
+title = "Duplication-based measures of difference between gene and species trees."
+url = "https://doi.org/10.1089/cmb.1998.5.135"
+kind = "theory"
+root = "Eulenstein1998"
+status = "todo"
+
+[[paper]]
+id = "junhyong2000"
+family = 5
+order = 3
+authors = "Junhyong, Benjamin"
+year = "2000"
+title = "A TREE OBSCURED BY VINES: HORIZONTAL GENE TRANSFER AND THE MEDIAN TREE METHOD OF ESTIMATING SPECIES PHYLOGENY"
+url = "https://doi.org/10.1142/9789814447362_0055"
+kind = "theory+algorithm"
+root = "Junhyong2000"
+status = "todo"
+
+[[paper]]
+id = "page2000"
+family = 5
+order = 4
+authors = "Page"
+year = "2000"
+title = "Extracting Species Trees From Complex Gene Trees: Reconciled Trees And Vertebrate Phylogeny"
+url = "https://doi.org/10.1006/mpev.1999.0676"
+kind = "method"
+root = "Page2000"
+status = "todo"
+
+[[paper]]
+id = "vyugin2002"
+family = 5
+order = 5
+authors = "V'yugin, Gelfand, Lyubetsky"
+year = "2002"
+title = "Tree Reconciliation: Reconstruction of Species Phylogeny by Phylogenetic Gene Trees"
+url = "https://doi.org/10.1023/a:1020667228952"
+kind = "theory+algorithm"
+root = "Vyugin2002"
+status = "todo"
+
+[[paper]]
+id = "arvestad2003"
+family = 5
+order = 6
+authors = "Arvestad et al."
+year = "2003"
+title = "Bayesian gene/species tree reconciliation and orthology analysis using MCMC"
+url = "https://doi.org/10.1093/bioinformatics/btg1000"
+kind = "method"
+root = "Arvestad2003"
+status = "todo"
+
+[[paper]]
+id = "arvestad2004"
+family = 5
+order = 7
+authors = "Arvestad et al."
+year = "2004"
+title = "Gene tree reconstruction and orthology analysis based on an integrated model for duplications and sequence evolution"
+url = "https://doi.org/10.1145/974614.974657"
+kind = "method"
+root = "Arvestad2004"
+status = "todo"
+
+[[paper]]
+id = "gorecki2004"
+family = 5
+order = 8
+authors = "Górecki"
+year = "2004"
+title = "Reconciliation problems for duplication, loss and horizontal gene transfer"
+url = "https://doi.org/10.1145/974614.974656"
+kind = "theory"
+root = "Gorecki2004"
+status = "todo"
+
+[[paper]]
+id = "bonizzoni2005"
+family = 5
+order = 9
+authors = "Bonizzoni, Vedova, Dondi"
+year = "2005"
+title = "Reconciling a gene tree to a species tree under the duplication cost model"
+url = "https://doi.org/10.1016/j.tcs.2005.05.016"
+kind = "theory+algorithm"
+root = "Bonizzoni2005"
+status = "todo"
+
+[[paper]]
+id = "durand2006"
+family = 5
+order = 10
+authors = "Durand, Halldórsson, Vernot"
+year = "2006"
+title = "A Hybrid Micro–Macroevolutionary Approach to Gene Tree Reconstruction"
+url = "https://doi.org/10.1089/cmb.2006.13.320"
+kind = "method"
+root = "Durand2006"
+status = "todo"
+
+[[paper]]
+id = "berglundsonnhammer2006"
+family = 5
+order = 11
+authors = "Berglund-Sonnhammer et al."
+year = "2006"
+title = "Optimal gene trees from sequences and species trees using a soft interpretation of parsimony."
+url = "https://doi.org/10.1007/s00239-005-0096-1"
+kind = "theory+algorithm"
+root = "Berglundsonnhammer2006"
+status = "todo"
+
+[[paper]]
+id = "beiko2006"
+family = 5
+order = 12
+authors = "Beiko, Hamilton"
+year = "2006"
+title = "Phylogenetic identification of lateral genetic transfer events"
+url = "https://doi.org/10.1186/1471-2148-6-15"
+kind = "method"
+root = "Beiko2006"
+status = "todo"
+
+[[paper]]
+id = "doyon2008"
+family = 5
+order = 13
+authors = "Doyon, Chauve, Hamel"
+year = "2008"
+title = "Algorithms for Exploring the Space of Gene Tree/Species Tree Reconciliations"
+url = "https://doi.org/10.1007/978-3-540-87989-3_1"
+kind = "theory+algorithm"
+root = "Doyon2008"
+status = "todo"
+
+[[paper]]
+id = "duptree"
+family = 5
+order = 14
 short = "DupTree"
 authors = "Wehe et al."
 year = "2008"
@@ -1085,9 +1797,81 @@ root = "DupTree"
 status = "todo"
 
 [[paper]]
+id = "vernot2008"
+family = 5
+order = 15
+authors = "Vernot et al."
+year = "2008"
+title = "Reconciliation with Non-Binary Species Trees"
+url = "https://doi.org/10.1089/cmb.2008.0092"
+kind = "theory+algorithm"
+root = "Vernot2008"
+status = "todo"
+
+[[paper]]
+id = "akerborg2009"
+family = 5
+order = 16
+authors = "Åkerborg et al."
+year = "2009"
+title = "Simultaneous Bayesian gene tree reconstruction and reconciliation analysis"
+url = "https://doi.org/10.1073/pnas.0806251106"
+kind = "method"
+root = "Akerborg2009"
+status = "todo"
+
+[[paper]]
+id = "doyon2009"
+family = 5
+order = 17
+authors = "Doyon, Chauve, Hamel"
+year = "2009"
+title = "Space of gene/species trees reconciliations and parsimonious models."
+url = "https://doi.org/10.1089/cmb.2009.0095"
+kind = "theory"
+root = "Doyon2009"
+status = "todo"
+
+[[paper]]
+id = "rasmussen2010"
+family = 5
+order = 18
+authors = "Rasmussen, Kellis"
+year = "2010"
+title = "A Bayesian Approach for Fast and Accurate Gene Tree Reconstruction"
+url = "https://doi.org/10.1093/molbev/msq189"
+kind = "method"
+root = "Rasmussen2010"
+status = "todo"
+
+[[paper]]
+id = "doyon2010"
+family = 5
+order = 19
+authors = "Doyon et al."
+year = "2010"
+title = "An Efficient Algorithm for Gene/Species Trees Parsimonious Reconciliation with Losses, Duplications and Transfers"
+url = "https://doi.org/10.1007/978-3-642-16181-0_9"
+kind = "method"
+root = "Doyon2010"
+status = "todo"
+
+[[paper]]
+id = "bansal2010"
+family = 5
+order = 20
+authors = "Bansal, Burleigh, Eulenstein"
+year = "2010"
+title = "Efficient genome-scale phylogenetic analysis under the duplication-loss and deep coalescence cost models"
+url = "https://doi.org/10.1186/1471-2105-11-s1-s42"
+kind = "theory+algorithm"
+root = "Bansal2010"
+status = "todo"
+
+[[paper]]
 id = "igtp"
 family = 5
-order = 2
+order = 21
 short = "iGTP"
 authors = "Chaudhary et al."
 year = "2010"
@@ -1098,9 +1882,167 @@ root = "Igtp"
 status = "todo"
 
 [[paper]]
+id = "sprit"
+family = 5
+order = 22
+short = "SPRIT"
+authors = "Hill et al."
+year = "2010"
+title = "SPRIT: Identifying horizontal gene transfer in rooted phylogenetic trees."
+url = "https://doi.org/10.1186/1471-2148-10-42"
+kind = "theory+algorithm"
+root = "Sprit"
+status = "todo"
+
+[[paper]]
+id = "gorecki2011"
+family = 5
+order = 23
+authors = "Górecki, Burleigh, Eulenstein"
+year = "2011"
+title = "Maximum likelihood models and algorithms for gene tree evolution with duplications and losses"
+url = "https://doi.org/10.1186/1471-2105-12-s1-s15"
+kind = "method"
+root = "Gorecki2011"
+status = "todo"
+
+[[paper]]
+id = "wu2011"
+family = 5
+order = 24
+authors = "Wu, Zhang"
+year = "2011"
+title = "Structural properties of the reconciliation space and their applications in enumerating nearly-optimal reconciliations between a gene tree and a species tree"
+url = "https://doi.org/10.1186/1471-2105-12-s9-s7"
+kind = "theory+algorithm"
+root = "Wu2011"
+status = "todo"
+
+[[paper]]
+id = "nguyen2012"
+family = 5
+order = 25
+authors = "Nguyen et al."
+year = "2012"
+title = "Accounting for Gene Tree Uncertainties Improves Gene Trees and Reconciliation Inference"
+url = "https://doi.org/10.1007/978-3-642-33122-0_10"
+kind = "method"
+root = "Nguyen2012"
+status = "todo"
+
+[[paper]]
+id = "gorecki2012-simultaneous"
+family = 5
+order = 26
+authors = "Górecki, Eulenstein"
+year = "2012"
+title = "Algorithms: simultaneous error-correction and rooting for gene tree reconciliation and the gene duplication problem"
+url = "https://doi.org/10.1186/1471-2105-13-s10-s14"
+kind = "method"
+root = "Gorecki2012Simultaneous"
+status = "todo"
+
+[[paper]]
+id = "doyon2012"
+family = 5
+order = 27
+authors = "Doyon, Hamel, Chauve"
+year = "2012"
+title = "An efficient method for exploring the space of gene tree/species tree reconciliations in a probabilistic framework."
+url = "https://doi.org/10.1109/tcbb.2011.64"
+kind = "method"
+root = "Doyon2012"
+status = "todo"
+
+[[paper]]
+id = "chaudhary2012"
+family = 5
+order = 28
+authors = "Chaudhary, Burleigh, Eulenstein"
+year = "2012"
+title = "Efficient error correction algorithms for gene tree reconciliation based on duplication, duplication and loss, and deep coalescence"
+url = "https://doi.org/10.1186/1471-2105-13-s10-s11"
+kind = "theory+algorithm"
+root = "Chaudhary2012"
+status = "todo"
+
+[[paper]]
+id = "swenson2012-gene"
+family = 5
+order = 29
+authors = "Swenson, Doroftei, El-Mabrouk"
+year = "2012"
+title = "Gene tree correction for reconciliation and species tree inference"
+url = "https://doi.org/10.1186/1748-7188-7-31"
+kind = "theory+algorithm"
+root = "Swenson2012Gene"
+status = "todo"
+
+[[paper]]
+id = "stolzer2012"
+family = 5
+order = 30
+authors = "Stolzer et al."
+year = "2012"
+title = "Inferring duplications, losses, transfers and incomplete lineage sorting with nonbinary species trees."
+url = "https://doi.org/10.1093/bioinformatics/bts386"
+kind = "method"
+root = "Stolzer2012"
+status = "todo"
+
+[[paper]]
+id = "m2012"
+family = 5
+order = 31
+authors = "M., S., T."
+year = "2012"
+title = "Inferring optimal species trees under gene duplication and loss."
+url = "https://doi.org/10.1142/9789814447973_0025"
+kind = "theory+algorithm"
+root = "M2012"
+status = "todo"
+
+[[paper]]
+id = "szollosi2012"
+family = 5
+order = 32
+authors = "Szöllősi et al."
+year = "2012"
+title = "Phylogenetic modeling of lateral gene transfer reconstructs the pattern and relative timing of speciations"
+url = "https://doi.org/10.1073/pnas.1202997109"
+kind = "method"
+root = "Szollosi2012"
+status = "todo"
+
+[[paper]]
+id = "zheng2012"
+family = 5
+order = 33
+authors = "Zheng, Wu, Zhang"
+year = "2012"
+title = "Reconciliation of Gene and Species Trees With Polytomies"
+url = "https://arxiv.org/abs/1201.3995"
+kind = "theory+algorithm"
+root = "Zheng2012"
+status = "todo"
+
+[[paper]]
+id = "treefix"
+family = 5
+order = 34
+short = "TreeFix"
+authors = "Wu et al."
+year = "2012"
+title = "TreeFix: statistically informed gene tree error correction using species trees."
+url = "https://doi.org/10.1093/sysbio/sys076"
+kind = "method"
+root = "Treefix"
+status = "todo"
+
+[[paper]]
 id = "rasmussen2012"
 family = 5
-order = 3
+order = 35
 authors = "Rasmussen, Kellis"
 year = "2012"
 title = "Unified Modeling of Gene Duplication, Loss, and Coalescence Using a Locus Tree"
@@ -1110,9 +2052,33 @@ root = "Rasmussen2012"
 status = "todo"
 
 [[paper]]
+id = "szollosi2013"
+family = 5
+order = 36
+authors = "Szöllősi et al."
+year = "2013"
+title = "Efficient Exploration of the Space of Reconciled Gene Trees"
+url = "https://arxiv.org/abs/1306.2167"
+kind = "theory+algorithm"
+root = "Szollosi2013"
+status = "todo"
+
+[[paper]]
+id = "wenchieh2013"
+family = 5
+order = 37
+authors = "Wen-Chieh, Górecki, Oliver"
+year = "2013"
+title = "EXACT SOLUTIONS FOR SPECIES TREE INFERENCE FROM DISCORDANT GENE TREES"
+url = "https://doi.org/10.1142/s0219720013420055"
+kind = "method"
+root = "Wenchieh2013"
+status = "todo"
+
+[[paper]]
 id = "boussau2013"
 family = 5
-order = 4
+order = 38
 authors = "Boussau et al."
 year = "2013"
 title = "Genome-Scale Coestimation of Species and Gene Trees"
@@ -1122,21 +2088,21 @@ root = "Boussau2013"
 status = "todo"
 
 [[paper]]
-id = "roch2013"
+id = "steel2013-identifying"
 family = 5
-order = 5
-authors = "Roch, Snir"
+order = 39
+authors = "Steel et al."
 year = "2013"
-title = "Recovering the Treelike Trend of Evolution Despite Extensive Lateral Genetic Transfer: A Probabilistic Analysis"
-url = "https://doi.org/10.1089/cmb.2012.0234"
-kind = "theory+algorithm"
-root = "Roch2013"
+title = "Identifying a species tree subject to random lateral gene transfer."
+url = "https://doi.org/10.1016/j.jtbi.2013.01.009"
+kind = "theory"
+root = "Steel2013Identifying"
 status = "todo"
 
 [[paper]]
 id = "chaudhary2013"
 family = 5
-order = 6
+order = 40
 authors = "Chaudhary et al."
 year = "2013"
 title = "Inferring Species Trees from Incongruent Multi-Copy Gene Trees Using the Robinson-Foulds Distance"
@@ -1146,9 +2112,81 @@ root = "Chaudhary2013"
 status = "todo"
 
 [[paper]]
+id = "roch2013"
+family = 5
+order = 41
+authors = "Roch, Snir"
+year = "2013"
+title = "Recovering the Treelike Trend of Evolution Despite Extensive Lateral Genetic Transfer: A Probabilistic Analysis"
+url = "https://doi.org/10.1089/cmb.2012.0234"
+kind = "theory+algorithm"
+root = "Roch2013"
+status = "todo"
+
+[[paper]]
+id = "dondi2014"
+family = 5
+order = 42
+authors = "Dondi, El-Mabrouk, Swenson"
+year = "2014"
+title = "Gene tree correction for reconciliation and species tree inference: Complexity and algorithms"
+url = "https://doi.org/10.1016/j.jda.2013.06.001"
+kind = "method"
+root = "Dondi2014"
+status = "todo"
+
+[[paper]]
+id = "gorecki2014"
+family = 5
+order = 43
+authors = "Gorecki, Eulenstein"
+year = "2014"
+title = "Maximizing Deep Coalescence Cost"
+url = "https://doi.org/10.1109/tcbb.2013.144"
+kind = "theory"
+root = "Gorecki2014"
+status = "todo"
+
+[[paper]]
+id = "than2014"
+family = 5
+order = 44
+authors = "Than, Rosenberg"
+year = "2014"
+title = "Mean deep coalescence cost under exchangeable probability distributions"
+url = "https://doi.org/10.1016/j.dam.2014.02.010"
+kind = "theory"
+root = "Than2014"
+status = "todo"
+
+[[paper]]
+id = "wu2014"
+family = 5
+order = 45
+authors = "Wu et al."
+year = "2014"
+title = "Most parsimonious reconciliation in the presence of gene duplication, loss, and deep coalescence using labeled coalescent trees"
+url = "https://doi.org/10.1101/gr.161968.113"
+kind = "method"
+root = "Wu2014"
+status = "todo"
+
+[[paper]]
+id = "gorecki2015"
+family = 5
+order = 46
+authors = "Gorecki, Eulenstein"
+year = "2015"
+title = "Gene tree diameter for deep coalescence"
+url = "https://doi.org/10.1109/tcbb.2014.2351795"
+kind = "theory"
+root = "Gorecki2015"
+status = "todo"
+
+[[paper]]
 id = "davidson2015"
 family = 5
-order = 7
+order = 47
 authors = "Davidson et al."
 year = "2015"
 title = "Phylogenomic Species Tree Estimation in the Presence of Incomplete Lineage Sorting and Horizontal Gene Transfer"
@@ -1158,9 +2196,59 @@ root = "Davidson2015"
 status = "todo"
 
 [[paper]]
+id = "daskalakis2015"
+family = 5
+order = 48
+authors = "Daskalakis, Roch"
+year = "2015"
+title = "Species Trees are Recoverable from Unrooted Gene Tree Topologies Under a Constant Rate of Horizontal Gene Transfer"
+url = "https://arxiv.org/abs/1508.01962"
+kind = "theory"
+root = "Daskalakis2015"
+status = "todo"
+
+[[paper]]
+id = "eccetera"
+family = 5
+order = 49
+short = "ecceTERA"
+authors = "Jacox et al."
+year = "2016"
+title = "ecceTERA: comprehensive gene tree-species tree reconciliation using parsimony"
+url = "https://doi.org/10.1093/bioinformatics/btw105"
+kind = "theory+algorithm"
+root = "Eccetera"
+status = "todo"
+
+[[paper]]
+id = "lafond2016"
+family = 5
+order = 50
+authors = "Lafond et al."
+year = "2016"
+title = "Gene Tree Construction and Correction using SuperTree and Reconciliation"
+url = "https://arxiv.org/abs/1610.05068"
+kind = "theory+algorithm"
+root = "Lafond2016"
+status = "todo"
+
+[[paper]]
+id = "simphy"
+family = 5
+order = 51
+short = "SimPhy"
+authors = "Mallo, Martins, Posada"
+year = "2016"
+title = "SimPhy : Phylogenomic Simulation of Gene, Locus, and Species Trees"
+url = "https://doi.org/10.1093/sysbio/syv082"
+kind = "method"
+root = "Simphy"
+status = "todo"
+
+[[paper]]
 id = "daskalakis2016"
 family = 5
-order = 8
+order = 52
 authors = "Daskalakis, Roch"
 year = "2016"
 title = "Species Trees from Gene Trees Despite a High Rate of Lateral Genetic Transfer: A Tight Bound"
@@ -1170,9 +2258,155 @@ root = "Daskalakis2016"
 status = "todo"
 
 [[paper]]
+id = "hellmuth2017"
+family = 5
+order = 53
+authors = "Hellmuth"
+year = "2017"
+title = "Biologically Feasible Gene Trees, Reconciliation Maps and Informative Triples"
+url = "https://arxiv.org/abs/1701.07689"
+kind = "theory"
+root = "Hellmuth2017"
+status = "todo"
+
+[[paper]]
+id = "zhang2017"
+family = 5
+order = 54
+authors = "Zhang, Wu"
+year = "2017"
+title = "Coestimation of Gene Trees and Reconciliations Under a Duplication-Loss-Coalescence Model"
+url = "https://doi.org/10.1007/978-3-319-59575-7_18"
+kind = "method"
+root = "Zhang2017"
+status = "todo"
+
+[[paper]]
+id = "hernandezrosales2017"
+family = 5
+order = 55
+authors = "Hernandez-Rosales et al."
+year = "2017"
+title = "From event labeled gene trees to species trees"
+url = "https://arxiv.org/abs/1705.04190"
+kind = "theory+algorithm"
+root = "Hernandezrosales2017"
+status = "todo"
+
+[[paper]]
+id = "thomas2017"
+family = 5
+order = 56
+authors = "Thomas, Ather, Hahn"
+year = "2017"
+title = "Gene-Tree Reconciliation with MUL-Trees to Resolve Polyploidy Events"
+url = "https://doi.org/10.1093/sysbio/syx044"
+kind = "theory+algorithm"
+root = "Thomas2017"
+status = "todo"
+
+[[paper]]
+id = "brejova2017"
+family = 5
+order = 57
+authors = "Brejová et al."
+year = "2017"
+title = "Isometric gene tree reconciliation revisited"
+url = "https://doi.org/10.1186/s13015-017-0108-x"
+kind = "theory+algorithm"
+root = "Brejova2017"
+status = "todo"
+
+[[paper]]
+id = "isosel"
+family = 5
+order = 58
+short = "IsoSel"
+authors = "Philippon et al."
+year = "2017"
+title = "IsoSel: Protein Isoform Selector for phylogenetic reconstructions"
+url = "https://doi.org/10.1371/journal.pone.0174250"
+kind = "method"
+root = "Isosel"
+status = "todo"
+
+[[paper]]
+id = "kordi2017"
+family = 5
+order = 59
+authors = "Kordi, Bansal"
+year = "2017"
+title = "On the Complexity of Duplication-Transfer-Loss Reconciliation with Non-Binary Gene Trees"
+url = "https://doi.org/10.1109/tcbb.2015.2511761"
+kind = "theory"
+root = "Kordi2017"
+status = "todo"
+
+[[paper]]
+id = "gei2017"
+family = 5
+order = 60
+authors = "Geiß et al."
+year = "2017"
+title = "Reconstructing Gene Trees From Fitch's Xenology Relation"
+url = "https://arxiv.org/abs/1711.02152"
+kind = "theory"
+root = "Gei2017"
+status = "todo"
+
+[[paper]]
+id = "gorecki2017"
+family = 5
+order = 61
+authors = "Gorecki, Paszek, Eulenstein"
+year = "2017"
+title = "Unconstrained Diameters for Deep Coalescence"
+url = "https://doi.org/10.1109/tcbb.2016.2520937"
+kind = "theory"
+root = "Gorecki2017"
+status = "todo"
+
+[[paper]]
+id = "ciach2018"
+family = 5
+order = 62
+authors = "Ciach, Muszewska, Górecki"
+year = "2018"
+title = "Locus-aware decomposition of gene trees with respect to polytomous species trees"
+url = "https://doi.org/10.1186/s13015-018-0128-1"
+kind = "theory+algorithm"
+root = "Ciach2018"
+status = "todo"
+
+[[paper]]
+id = "phylopypruner"
+family = 5
+order = 63
+short = "PhyloPyPruner"
+authors = "Thalen"
+year = "2018"
+title = "PhyloPyPruner: Tree-based Orthology Inference for Phylogenomics with New Methods for Identifying and Excluding Contamination"
+url = "https://www.semanticscholar.org/paper/d0a6df9f05e1a8fbf5ebe22e9667524b3bbaaba9"
+kind = "method"
+root = "Phylopypruner"
+status = "todo"
+
+[[paper]]
+id = "du2018"
+family = 5
+order = 64
+authors = "Du, Nakhleh"
+year = "2018"
+title = "Species Tree and Reconciliation Estimation under a Duplication-Loss-Coalescence Model"
+url = "https://doi.org/10.1145/3233547.3233600"
+kind = "theory+algorithm"
+root = "Du2018"
+status = "todo"
+
+[[paper]]
 id = "stag"
 family = 5
-order = 9
+order = 65
 short = "STAG"
 authors = "Emms, Kelly"
 year = "2018"
@@ -1183,9 +2417,70 @@ root = "Stag"
 status = "todo"
 
 [[paper]]
+id = "gei2019"
+family = 5
+order = 66
+authors = "Geiß et al."
+year = "2019"
+title = "Best Match Graphs and Reconciliation of Gene Trees with Species Trees"
+url = "https://arxiv.org/abs/1904.12021"
+kind = "theory"
+root = "Gei2019"
+status = "todo"
+
+[[paper]]
+id = "kordi2019"
+family = 5
+order = 67
+authors = "Kordi, Bansal"
+year = "2019"
+title = "Exact Algorithms for Duplication-Transfer-Loss Reconciliation with Non-Binary Gene Trees"
+url = "https://doi.org/10.1109/tcbb.2017.2710342"
+kind = "theory+algorithm"
+root = "Kordi2019"
+status = "todo"
+
+[[paper]]
+id = "hasic2019-gene"
+family = 5
+order = 68
+authors = "Hasić, Tannier"
+year = "2019"
+title = "Gene tree reconciliation including transfers with replacement is NP-hard and FPT"
+url = "https://doi.org/10.1007/s10878-019-00396-z"
+kind = "theory"
+root = "Hasic2019Gene"
+status = "todo"
+
+[[paper]]
+id = "hasic2019-species"
+family = 5
+order = 69
+authors = "Hasić, Tannier"
+year = "2019"
+title = "Gene tree species tree reconciliation with gene conversion"
+url = "https://doi.org/10.1007/s00285-019-01331-w"
+kind = "theory+algorithm"
+root = "Hasic2019Species"
+status = "todo"
+
+[[paper]]
+id = "orthofinder"
+family = 5
+order = 70
+short = "OrthoFinder"
+authors = "Emms, Kelly"
+year = "2019"
+title = "OrthoFinder: phylogenetic orthology inference for comparative genomics"
+url = "https://doi.org/10.1186/s13059-019-1832-y"
+kind = "method"
+root = "Orthofinder"
+status = "todo"
+
+[[paper]]
 id = "astral-pro"
 family = 5
-order = 10
+order = 71
 short = "ASTRAL-Pro"
 authors = "Zhang et al."
 year = "2020"
@@ -1197,9 +2492,21 @@ status = "todo"
 builds_on = ["astral"]
 
 [[paper]]
+id = "kamela2020"
+family = 5
+order = 72
+authors = "Kamela et al."
+year = "2020"
+title = "Choosing representative proteins based on splicing structure similarity improves the accuracy of gene tree reconstruction"
+url = "https://doi.org/10.1101/2020.04.09.034785"
+kind = "method"
+root = "Kamela2020"
+status = "todo"
+
+[[paper]]
 id = "fastmulrfs"
 family = 5
-order = 11
+order = 73
 short = "FastMulRFS"
 authors = "Molloy, Warnow"
 year = "2020"
@@ -1210,9 +2517,57 @@ root = "FastMulRfs"
 status = "todo"
 
 [[paper]]
+id = "kordi2020"
+family = 5
+order = 74
+authors = "Kordi, Kundu, Bansal"
+year = "2020"
+title = "On Inferring Additive and Replacing Horizontal Gene Transfers Through Phylogenetic Reconciliation"
+url = "https://doi.org/10.1101/2020.03.27.010785"
+kind = "theory+algorithm"
+root = "Kordi2020"
+status = "todo"
+
+[[paper]]
+id = "lafond2020"
+family = 5
+order = 75
+authors = "Lafond, Hellmuth"
+year = "2020"
+title = "Reconstruction of time-consistent species trees."
+url = "https://doi.org/10.1186/s13015-020-00175-0"
+kind = "theory"
+root = "Lafond2020"
+status = "todo"
+
+[[paper]]
+id = "anselmetti2021"
+family = 5
+order = 76
+authors = "Anselmetti et al."
+year = "2021"
+title = "Gene tree and species tree reconciliation with endosymbiotic gene transfer"
+url = "https://doi.org/10.1093/bioinformatics/btab328"
+kind = "theory+algorithm"
+root = "Anselmetti2021"
+status = "todo"
+
+[[paper]]
+id = "schaller2021"
+family = 5
+order = 77
+authors = "Schaller, Hellmuth, Stadler"
+year = "2021"
+title = "Orientation of Fitch Graphs and Detection of Horizontal Gene Transfer in Gene Trees"
+url = "https://arxiv.org/abs/2112.00403"
+kind = "theory"
+root = "Schaller2021"
+status = "todo"
+
+[[paper]]
 id = "legried2021"
 family = 5
-order = 12
+order = 78
 authors = "Legried et al."
 year = "2021"
 title = "Polynomial-Time Statistical Estimation of Species Trees Under Gene Duplication and Loss"
@@ -1227,7 +2582,7 @@ covered_by = [
 [[paper]]
 id = "markin2021"
 family = 5
-order = 13
+order = 79
 authors = "Markin, Eulenstein"
 year = "2021"
 title = "Quartet-Based Inference Is Statistically Consistent Under the Unified Duplication-Loss-Coalescence Model"
@@ -1237,9 +2592,21 @@ root = "Markin2021"
 status = "todo"
 
 [[paper]]
+id = "li2021"
+family = 5
+order = 80
+authors = "Li et al."
+year = "2021"
+title = "The Multilocus Multispecies Coalescent: A Flexible New Model of Gene Family Evolution."
+url = "https://doi.org/10.1093/sysbio/syaa084"
+kind = "theory"
+root = "Li2021"
+status = "todo"
+
+[[paper]]
 id = "astral-pro2"
 family = 5
-order = 14
+order = 81
 short = "ASTRAL-Pro 2"
 authors = "Zhang, Mirarab"
 year = "2022"
@@ -1251,9 +2618,21 @@ status = "todo"
 builds_on = ["astral-pro"]
 
 [[paper]]
+id = "mai2022"
+family = 5
+order = 82
+authors = "Mai, Mirarab"
+year = "2022"
+title = "Completing gene trees without species trees in sub-quadratic time."
+url = "https://doi.org/10.1093/bioinformatics/btab875"
+kind = "theory+algorithm"
+root = "Mai2022"
+status = "todo"
+
+[[paper]]
 id = "disco"
 family = 5
-order = 15
+order = 83
 short = "DISCO"
 authors = "Willson et al."
 year = "2022"
@@ -1264,9 +2643,33 @@ root = "Disco"
 status = "todo"
 
 [[paper]]
+id = "xiong2022"
+family = 5
+order = 84
+authors = "Xiong et al."
+year = "2022"
+title = "Species Tree Estimation and the Impact of Gene Loss Following Whole-Genome Duplication"
+url = "https://doi.org/10.1093/sysbio/syac040"
+kind = "theory"
+root = "Xiong2022"
+status = "todo"
+
+[[paper]]
+id = "hill2022"
+family = 5
+order = 85
+authors = "Hill, Legried, Roch"
+year = "2022"
+title = "Species Tree Estimation Under Joint Modeling of Coalescence and Duplication: Sample Complexity of Quartet Methods"
+url = "https://doi.org/10.1214/22-AAP1799"
+kind = "theory"
+root = "Hill2022"
+status = "todo"
+
+[[paper]]
 id = "speciesrax"
 family = 5
-order = 16
+order = 86
 short = "SpeciesRax"
 authors = "Morel et al."
 year = "2022"
@@ -1277,33 +2680,33 @@ root = "SpeciesRax"
 status = "todo"
 
 [[paper]]
-id = "hill2022"
+id = "bayzid2023"
 family = 5
-order = 17
-authors = "Hill, Legried, Roch"
-year = "2022"
-title = "Species Tree Estimation Under Joint Modeling of Coalescence and Duplication: Sample Complexity of Quartet Methods"
-url = "https://doi.org/10.1214/22-AAP1799"
-kind = "theory"
-root = "Hill2022"
+order = 87
+authors = "Bayzid"
+year = "2023"
+title = "Inferring Optimal Species Trees in the Presence of Gene Duplication and Loss: Beyond Rooted Gene Trees"
+url = "https://doi.org/10.1089/cmb.2021.0522"
+kind = "theory+algorithm"
+root = "Bayzid2023"
 status = "todo"
 
 [[paper]]
-id = "xiong2022"
+id = "soewongsono2023"
 family = 5
-order = 18
-authors = "Xiong et al."
-year = "2022"
-title = "Species Tree Estimation and the Impact of Gene Loss Following Whole-Genome Duplication"
-url = "https://doi.org/10.1093/sysbio/syac040"
+order = 88
+authors = "Soewongsono et al."
+year = "2023"
+title = "Matrix-analytic methods for the evolution of species trees, gene trees, and their reconciliation"
+url = "https://arxiv.org/abs/2309.06447"
 kind = "theory"
-root = "Xiong2022"
+root = "Soewongsono2023"
 status = "todo"
 
 [[paper]]
 id = "alerax"
 family = 5
-order = 19
+order = 89
 short = "AleRax"
 authors = "Morel et al."
 year = "2024"
@@ -1314,9 +2717,33 @@ root = "AleRax"
 status = "todo"
 
 [[paper]]
+id = "sanchez2024"
+family = 5
+order = 90
+authors = "Sánchez et al."
+year = "2024"
+title = "The Path-Label Reconciliation (PLR) Dissimilarity Measure for Gene Trees"
+url = "https://arxiv.org/abs/2407.06367"
+kind = "theory+algorithm"
+root = "Sanchez2024"
+status = "todo"
+
+[[paper]]
+id = "rafi2025"
+family = 5
+order = 91
+authors = "Rafi et al."
+year = "2025"
+title = "Highly Accurate Species Tree Inference from Orthologs and Paralogs through Scalable Quartet Amalgamation"
+url = "https://doi.org/10.1101/2025.04.04.647228"
+kind = "method"
+root = "Rafi2025"
+status = "todo"
+
+[[paper]]
 id = "duploss2"
 family = 5
-order = 20
+order = 92
 short = "DupLoss-2"
 authors = "Parsons, Bansal"
 year = "2026"
@@ -1326,16 +2753,112 @@ kind = "method"
 root = "DupLoss2"
 status = "todo"
 
+[[paper]]
+id = "parsons2026"
+family = 5
+order = 93
+authors = "Parsons et al."
+year = "2026"
+title = "On correctness of gene tree tagging under a unified model of gene duplication, loss, and coalescence"
+url = "https://doi.org/10.64898/2026.01.20.700722"
+kind = "theory+algorithm"
+root = "Parsons2026"
+status = "todo"
+
+[[paper]]
+id = "orthogarden"
+family = 5
+order = 94
+short = "OrthoGarden"
+authors = "Turner et al."
+year = "2026"
+title = "OrthoGarden: a pipeline for propagating phylogenetic trees for nonmodel organisms from short reads and de novo genome assemblies"
+url = "https://doi.org/10.1093/molbev/msag053"
+kind = "method"
+root = "Orthogarden"
+status = "todo"
+
+[[paper]]
+id = "splitaligner"
+family = 5
+order = 95
+short = "SplitAligner"
+authors = "Wu"
+year = "2026"
+title = "SplitAligner: A Gene-Species Tree Reconciliation Framework Using Split-Based Branch Mapping"
+url = "https://doi.org/10.64898/2026.02.24.707838"
+kind = "method"
+root = "Splitaligner"
+status = "todo"
+
+[[paper]]
+id = "deep-coalescence"
+family = 5
+order = 96
+authors = "random-notes contributors"
+year = "2026"
+title = "The spectrum of deep-coalescence diameters of rooted phylogenetic trees"
+url = "https://github.com/vltanh/random-notes/blob/a73a2fb931a0634acb83ce236fa458dcaf59d50f/deep-coalescence/paper.tex"
+kind = "theory"
+root = "DeepCoalescence"
+status = "todo"
+
 # ---------------------------------------------------------------------------------------------
 # 6. Rooting, branch lengths, support and general methods
 # ---------------------------------------------------------------------------------------------
 
-# Species-tree rooting, branch lengths, support and hypothesis testing
+[[paper]]
+id = "burleigh2006"
+family = 6
+order = 1
+authors = "Burleigh, Driskell, Sanderson"
+year = "2006"
+title = "Supertree Bootstrapping Methods for Assessing Phylogenetic Variation among Genes in Genome-Scale Data Sets"
+url = "https://doi.org/10.1080/10635150500541722"
+kind = "theory+algorithm"
+root = "Burleigh2006"
+status = "todo"
+
+[[paper]]
+id = "joly2009"
+family = 6
+order = 2
+authors = "Joly, Bruneau"
+year = "2009"
+title = "Measuring branch support in species trees obtained by gene tree parsimony."
+url = "https://doi.org/10.1093/sysbio/syp013"
+kind = "theory+algorithm"
+root = "Joly2009"
+status = "todo"
+
+[[paper]]
+id = "omeara2010"
+family = 6
+order = 3
+authors = "O'Meara"
+year = "2010"
+title = "New Heuristic Methods for Joint Species Delimitation and Species Tree Inference"
+url = "https://doi.org/10.1093/sysbio/syp077"
+kind = "method"
+root = "Omeara2010"
+status = "todo"
+
+[[paper]]
+id = "arenas2014"
+family = 6
+order = 4
+authors = "Arenas, Posada"
+year = "2014"
+title = "Simulation of Genome-Wide Evolution under Heterogeneous Substitution Models and Complex Multispecies Coalescent Histories"
+url = "https://doi.org/10.1093/molbev/msu078"
+kind = "method"
+root = "Arenas2014"
+status = "todo"
 
 [[paper]]
 id = "sayyari2016"
 family = 6
-order = 1
+order = 5
 authors = "Sayyari, Mirarab"
 year = "2016"
 title = "Fast Coalescent-Based Computation of Local Branch Support from Quartet Frequencies"
@@ -1345,9 +2868,45 @@ root = "Sayyari2016"
 status = "todo"
 
 [[paper]]
+id = "gaither2016"
+family = 6
+order = 6
+authors = "Gaither, Kubatko"
+year = "2016"
+title = "Hypothesis tests for phylogenetic quartets, with applications to coalescent-based species tree inference"
+url = "https://doi.org/10.1016/j.jtbi.2016.08.013"
+kind = "theory+algorithm"
+root = "Gaither2016"
+status = "todo"
+
+[[paper]]
+id = "allman2017"
+family = 6
+order = 7
+authors = "Allman, Kubatko, Rhodes"
+year = "2017"
+title = "Split Scores: A Tool to Quantify Phylogenetic Signal in Genome-Scale Data"
+url = "https://doi.org/10.1093/sysbio/syw103"
+kind = "method"
+root = "Allman2017"
+status = "todo"
+
+[[paper]]
+id = "tian2017-rooting"
+family = 6
+order = 8
+authors = "Tian, Kubatko"
+year = "2017"
+title = "Rooting phylogenetic trees under the coalescent model using site pattern probabilities"
+url = "https://doi.org/10.1186/s12862-017-1108-7"
+kind = "theory+algorithm"
+root = "Tian2017Rooting"
+status = "todo"
+
+[[paper]]
 id = "stride"
 family = 6
-order = 2
+order = 9
 short = "STRIDE"
 authors = "Emms, Kelly"
 year = "2017"
@@ -1358,21 +2917,9 @@ root = "Stride"
 status = "todo"
 
 [[paper]]
-id = "allman2017"
-family = 6
-order = 3
-authors = "Allman, Kubatko, Rhodes"
-year = "2017"
-title = "Split Scores: A Tool to Quantify Phylogenetic Signal in Genome-Scale Data"
-url = "https://doi.org/10.1093/sysbio/syw103"
-kind = "method"
-root = "Allman2017"
-status = "todo"
-
-[[paper]]
 id = "sayyari2018"
 family = 6
-order = 4
+order = 10
 authors = "Sayyari, Mirarab"
 year = "2018"
 title = "Testing for Polytomies in Phylogenetic Species Trees Using Quartet Frequencies"
@@ -1382,9 +2929,34 @@ root = "Sayyari2018"
 status = "todo"
 
 [[paper]]
+id = "gatesy2019"
+family = 6
+order = 11
+authors = "Gatesy et al."
+year = "2019"
+title = "Partitioned coalescence support reveals biases in species-tree methods and detects gene trees that determine phylogenomic conflicts"
+url = "https://doi.org/10.1016/j.ympev.2019.106539"
+kind = "method"
+root = "Gatesy2019"
+status = "todo"
+
+[[paper]]
+id = "physpetree"
+family = 6
+order = 12
+short = "PhySpeTree"
+authors = "Fang et al."
+year = "2019"
+title = "PhySpeTree: an automated pipeline for reconstructing phylogenetic species trees."
+url = "https://doi.org/10.1186/s12862-019-1541-x"
+kind = "method"
+root = "Physpetree"
+status = "todo"
+
+[[paper]]
 id = "minh2020"
 family = 6
-order = 5
+order = 13
 authors = "Minh, Hahn, Lanfear"
 year = "2020"
 title = "New Methods to Calculate Concordance Factors for Phylogenomic Datasets"
@@ -1394,9 +2966,33 @@ root = "Minh2020"
 status = "todo"
 
 [[paper]]
+id = "sanderson2020"
+family = 6
+order = 14
+authors = "Sanderson, McMahon, Steel"
+year = "2020"
+title = "Terraces in Gene Tree Reconciliation-Based Species Tree Inference"
+url = "https://doi.org/10.1101/2020.04.17.047092"
+kind = "theory+algorithm"
+root = "Sanderson2020"
+status = "todo"
+
+[[paper]]
+id = "peng2022"
+family = 6
+order = 15
+authors = "Peng, Swofford, Kubatko"
+year = "2022"
+title = "Estimation of speciation times under the multispecies coalescent"
+url = "https://doi.org/10.1093/bioinformatics/btac679"
+kind = "method"
+root = "Peng2022"
+status = "todo"
+
+[[paper]]
 id = "quintet-rooting"
 family = 6
-order = 6
+order = 16
 short = "Quintet Rooting"
 authors = "Tabatabaee et al."
 year = "2022"
@@ -1407,23 +3003,9 @@ root = "QuintetRooting"
 status = "todo"
 
 [[paper]]
-id = "qr-star"
-family = 6
-order = 7
-short = "QR-STAR"
-authors = "Tabatabaee, Roch, Warnow"
-year = "2023"
-title = "QR-STAR: A Polynomial-Time Statistically Consistent Method for Rooting Species Trees Under the Coalescent"
-url = "https://doi.org/10.1089/cmb.2023.0185"
-kind = "method"
-root = "QrStar"
-status = "todo"
-builds_on = ["quintet-rooting"]
-
-[[paper]]
 id = "disco-qr"
 family = 6
-order = 8
+order = 17
 short = "DISCO+QR"
 authors = "Willson et al."
 year = "2023"
@@ -1435,9 +3017,21 @@ status = "todo"
 builds_on = ["disco", "quintet-rooting"]
 
 [[paper]]
+id = "adams2023"
+family = 6
+order = 18
+authors = "Adams, DeGiorgio"
+year = "2023"
+title = "Likelihood-Based Tests of Species Tree Hypotheses"
+url = "https://doi.org/10.1093/molbev/msad159"
+kind = "method"
+root = "Adams2023"
+status = "todo"
+
+[[paper]]
 id = "castles"
 family = 6
-order = 9
+order = 19
 short = "CASTLES"
 authors = "Tabatabaee et al."
 year = "2023"
@@ -1448,21 +3042,23 @@ root = "Castles"
 status = "todo"
 
 [[paper]]
-id = "adams2023"
+id = "qr-star"
 family = 6
-order = 10
-authors = "Adams, DeGiorgio"
+order = 20
+short = "QR-STAR"
+authors = "Tabatabaee, Roch, Warnow"
 year = "2023"
-title = "Likelihood-Based Tests of Species Tree Hypotheses"
-url = "https://doi.org/10.1093/molbev/msad159"
+title = "QR-STAR: A Polynomial-Time Statistically Consistent Method for Rooting Species Trees Under the Coalescent"
+url = "https://doi.org/10.1089/cmb.2023.0185"
 kind = "method"
-root = "Adams2023"
+root = "QrStar"
 status = "todo"
+builds_on = ["quintet-rooting"]
 
 [[paper]]
 id = "castles-pro"
 family = 6
-order = 11
+order = 21
 short = "CASTLES-Pro"
 authors = "Tabatabaee et al."
 year = "2025"
@@ -1476,7 +3072,7 @@ builds_on = ["castles"]
 [[paper]]
 id = "tabatabaee2026"
 family = 6
-order = 12
+order = 22
 authors = "Tabatabaee, Claramunt, Mirarab"
 year = "2026"
 title = "Coalescent-Based Branch Length Estimation Improves Dating of Species Trees"
@@ -1485,43 +3081,195 @@ kind = "method"
 root = "Tabatabaee2026"
 status = "todo"
 
-# Species-tree model foundations and estimator-specific limitations
+[[paper]]
+id = "fastspeciestree"
+family = 6
+order = 23
+short = "FastSpeciesTree"
+authors = "Holmes, Kelly"
+year = "2026"
+title = "FastSpeciesTree: Fast and Scalable Species tree Inference"
+url = "https://doi.org/10.64898/2026.01.20.700630"
+kind = "method"
+root = "Fastspeciestree"
+status = "todo"
+
+# ---------------------------------------------------------------------------------------------
+# 7. Supertrees and tree merging
+# ---------------------------------------------------------------------------------------------
 
 [[paper]]
-id = "kingman1982"
-family = 6
+id = "baum1992"
+family = 7
+order = 1
+authors = "Baum"
+year = "1992"
+title = "Combining trees as a way of combining data sets for phylogenetic inference, and the desirability of combining gene trees"
+url = "https://doi.org/10.2307/1222480"
+kind = "method"
+root = "Baum1992"
+status = "todo"
+
+[[paper]]
+id = "ragan1992"
+family = 7
+order = 2
+authors = "Ragan"
+year = "1992"
+title = "Phylogenetic inference based on matrix representation of trees"
+url = "https://doi.org/10.1016/1055-7903(92)90035-f"
+kind = "method"
+root = "Ragan1992"
+status = "todo"
+
+[[paper]]
+id = "steel2000-supertrees"
+family = 7
+order = 3
+authors = "Steel, Dress, Böcker"
+year = "2000"
+title = "Points of View Simple but Fundamental Limitations on Supertree and Consensus Tree Methods"
+url = "https://doi.org/10.1080/10635159950173870"
+kind = "theory"
+root = "Steel2000Supertrees"
+status = "todo"
+
+[[paper]]
+id = "chen2003"
+family = 7
+order = 4
+authors = "Chen et al."
+year = "2003"
+title = "Flipping: A supertree construction method"
+url = "https://doi.org/10.1090/dimacs/061/10"
+kind = "method"
+root = "Chen2003"
+status = "todo"
+
+[[paper]]
+id = "binindaemonds2003"
+family = 7
+order = 5
+authors = "Bininda-Emonds"
+year = "2003"
+title = "MRP supertree construction in the consensus setting"
+url = "https://doi.org/10.1090/dimacs/061/16"
+kind = "theory"
+root = "Binindaemonds2003"
+status = "todo"
+
+[[paper]]
+id = "gent2003"
+family = 7
+order = 6
+authors = "Gent et al."
+year = "2003"
+title = "Supertree Construction with Constraint Programming"
+url = "https://doi.org/10.1007/978-3-540-45193-8_63"
+kind = "method"
+root = "Gent2003"
+status = "todo"
+
+[[paper]]
+id = "eulenstein2004"
+family = 7
+order = 7
+authors = "Eulenstein et al."
+year = "2004"
+title = "Performance of Flip Supertree Construction with a Heuristic Algorithm"
+url = "https://doi.org/10.1080/10635150490423719"
+kind = "method"
+root = "Eulenstein2004"
+status = "todo"
+
+[[paper]]
+id = "chen2004"
+family = 7
+order = 8
+authors = "Chen, Eulenstein, Fernández-Baca"
+year = "2004"
+title = "Rainbow: a toolbox for phylogenetic supertree construction and analysis"
+url = "https://doi.org/10.1093/bioinformatics/bth313"
+kind = "theory+algorithm"
+root = "Chen2004"
+status = "todo"
+
+[[paper]]
+id = "creevey2005"
+family = 7
+order = 9
+authors = "Creevey, McInerney"
+year = "2005"
+title = "Clann: investigating phylogenetic information through supertree analyses"
+url = "https://doi.org/10.1093/bioinformatics/bti020"
+kind = "method"
+root = "Creevey2005"
+status = "todo"
+
+[[paper]]
+id = "chen2006-heuristics"
+family = 7
+order = 10
+authors = "Chen et al."
+year = "2006"
+title = "Improved Heuristics for Minimum-Flip Supertree Construction"
+url = "https://doi.org/10.1177/117693430600200003"
+kind = "method"
+root = "Chen2006Heuristics"
+status = "todo"
+
+[[paper]]
+id = "chen2006-minimumflip"
+family = 7
+order = 11
+authors = "Chen et al."
+year = "2006"
+title = "Minimum-Flip Supertrees: Complexity and Algorithms"
+url = "https://doi.org/10.1109/tcbb.2006.26"
+kind = "theory+algorithm"
+root = "Chen2006Minimumflip"
+status = "todo"
+
+[[paper]]
+id = "sdm"
+family = 7
+order = 12
+short = "SDM"
+authors = "Criscuolo et al."
+year = "2006"
+title = "SDM: a fast distance-based approach for (super) tree building in phylogenomics"
+url = "https://doi.org/10.1080/10635150600969872"
+kind = "method"
+root = "Sdm"
+status = "todo"
+
+[[paper]]
+id = "wilkinson2007"
+family = 7
 order = 13
-authors = "Kingman"
-year = "1982"
-title = "The Coalescent"
-url = "https://doi.org/10.1016/0304-4149(82)90011-4"
+authors = "Wilkinson et al."
+year = "2007"
+title = "Properties of Supertree Methods in the Consensus Setting"
+url = "https://doi.org/10.1080/10635150701245370"
 kind = "theory"
-root = "Kingman1982"
-status = "partial"
-covered_by = [
-  { repo = "lean4-phylogenetics", what = "Kingman's coalescent on forests as a continuous-time Markov chain, its consistency under restriction to fewer lineages, and its factorization into the pure death process of the number of lineages and the jump chain of uniform merges (Phylogenetics/Coalescent/)" },
-]
+root = "Wilkinson2007"
+status = "todo"
 
 [[paper]]
-id = "dinh2025"
-family = 6
+id = "steel2008"
+family = 7
 order = 14
-authors = "Dinh, Baños"
-year = "2025"
-title = "Misspecification Strikes: ASTRAL Can Mislead in the Presence of Hybridization, Even for Nonanomalous Scenarios"
-url = "https://doi.org/10.1093/molbev/msaf049"
+authors = "Steel, Rodrigo"
+year = "2008"
+title = "Maximum likelihood supertrees"
+url = "https://doi.org/10.1080/10635150802033014"
 kind = "theory"
-root = "Dinh2025"
-status = "partial"
-covered_by = [
-  { repo = "lean4-tob-qmc", what = "Theorem 1 and Corollary 2, on the 5-cycle of Figure 1(d) rooted on a hybrid edge (TobQmc/External/DinhBanos2025/)" },
-]
-
-# Supertree-based and divide-and-conquer species-tree inference
+root = "Steel2008"
+status = "todo"
 
 [[paper]]
 id = "supertriplets"
-family = 6
+family = 7
 order = 15
 short = "SuperTriplets"
 authors = "Ranwez et al."
@@ -1533,9 +3281,108 @@ root = "SuperTriplets"
 status = "todo"
 
 [[paper]]
-id = "fastrfs"
-family = 6
+id = "superfine"
+family = 7
 order = 16
+short = "SuperFine"
+authors = "Swenson et al."
+year = "2012"
+title = "SuperFine: Fast and Accurate Supertree Estimation"
+url = "https://doi.org/10.1093/sysbio/syr092"
+kind = "method"
+root = "Superfine"
+status = "todo"
+
+[[paper]]
+id = "martins2014"
+family = 7
+order = 17
+authors = "Martins, Mallo, Posada"
+year = "2014"
+title = "A Bayesian Supertree Model for Genome-Wide Species Tree Reconstruction"
+url = "https://doi.org/10.1093/sysbio/syu082"
+kind = "theory+algorithm"
+root = "Martins2014"
+status = "todo"
+
+[[paper]]
+id = "lust"
+family = 7
+order = 18
+short = "L.U.St"
+authors = "Akanni et al."
+year = "2014"
+title = "L.U.St: a tool for approximated maximum likelihood supertree reconstruction"
+url = "https://doi.org/10.1186/1471-2105-15-183"
+kind = "method"
+root = "Lust"
+status = "todo"
+
+[[paper]]
+id = "whidden2014"
+family = 7
+order = 19
+authors = "Whidden, Zeh, Beiko"
+year = "2014"
+title = "Supertrees Based on the Subtree Prune-and-Regraft Distance"
+url = "https://doi.org/10.1093/sysbio/syu023"
+kind = "theory+algorithm"
+root = "Whidden2014"
+status = "todo"
+
+[[paper]]
+id = "bhattacharyya2015"
+family = 7
+order = 20
+authors = "Bhattacharyya, Mukhopadhyay"
+year = "2015"
+title = "Couplet Supertree Based Species Tree Estimation"
+url = "https://doi.org/10.1007/978-3-319-19048-8_5"
+kind = "method"
+root = "Bhattacharyya2015"
+status = "todo"
+
+[[paper]]
+id = "cospedtree-ii"
+family = 7
+order = 21
+short = "COSPEDTree-II"
+authors = "Bhattacharyya, Mukhopadhyay"
+year = "2016"
+title = "COSPEDTree-II: Improved couplet based phylogenetic supertree"
+url = "https://doi.org/10.1109/bibm.2016.7822499"
+kind = "method"
+root = "CospedtreeII"
+status = "todo"
+
+[[paper]]
+id = "redelings2017"
+family = 7
+order = 22
+authors = "Redelings, Holder"
+year = "2017"
+title = "A supertree pipeline for summarizing phylogenetic and taxonomic information for millions of species"
+url = "https://doi.org/10.7717/peerj.3058"
+kind = "method"
+root = "Redelings2017"
+status = "todo"
+
+[[paper]]
+id = "fleischauer2017"
+family = 7
+order = 23
+authors = "Fleischauer, Böcker"
+year = "2017"
+title = "Bad Clade Deletion Supertrees: A Fast and Accurate Supertree Algorithm"
+url = "https://doi.org/10.1093/molbev/msx191"
+kind = "method"
+root = "Fleischauer2017"
+status = "todo"
+
+[[paper]]
+id = "fastrfs"
+family = 7
+order = 24
 short = "FastRFS"
 authors = "Vachaspati, Warnow"
 year = "2017"
@@ -1546,9 +3393,58 @@ root = "FastRfs"
 status = "todo"
 
 [[paper]]
+id = "moon2017"
+family = 7
+order = 25
+authors = "Moon, Eulenstein"
+year = "2017"
+title = "Synthesizing large-scale species trees using the strict consensus approach."
+url = "https://doi.org/10.1142/s0219720017400029"
+kind = "theory+algorithm"
+root = "Moon2017"
+status = "todo"
+
+[[paper]]
+id = "jansson2018"
+family = 7
+order = 26
+authors = "Jansson, Rajaby, Sung"
+year = "2018"
+title = "Minimal Phylogenetic Supertrees and Local Consensus Trees"
+url = "https://doi.org/10.3934/medsci.2018.2.181"
+kind = "theory+algorithm"
+root = "Jansson2018"
+status = "todo"
+
+[[paper]]
+id = "siesta"
+family = 7
+order = 27
+short = "SIESTA"
+authors = "Vachaspati, Warnow"
+year = "2018"
+title = "SIESTA: enhancing searches for optimal supertrees and species trees."
+url = "https://doi.org/10.1186/s12864-018-4621-1"
+kind = "theory+algorithm"
+root = "Siesta"
+status = "todo"
+
+[[paper]]
+id = "warnow2018"
+family = 7
+order = 28
+authors = "Warnow"
+year = "2018"
+title = "Supertree construction: opportunities and challenges"
+url = "https://arxiv.org/abs/1805.03530"
+kind = "method"
+root = "Warnow2018"
+status = "todo"
+
+[[paper]]
 id = "njmerge"
-family = 6
-order = 17
+family = 7
+order = 29
 short = "NJMerge"
 authors = "Molloy, Warnow"
 year = "2019"
@@ -1560,8 +3456,8 @@ status = "todo"
 
 [[paper]]
 id = "treemerge"
-family = 6
-order = 18
+family = 7
+order = 30
 short = "TreeMerge"
 authors = "Molloy, Warnow"
 year = "2019"
@@ -1569,4 +3465,100 @@ title = "TreeMerge: A New Method for Improving the Scalability of Species Tree E
 url = "https://doi.org/10.1093/bioinformatics/btz344"
 kind = "method"
 root = "TreeMerge"
+status = "todo"
+
+[[paper]]
+id = "yu2020"
+family = 7
+order = 31
+authors = "Yu et al."
+year = "2020"
+title = "Advancing Divide-and-Conquer Phylogeny Estimation using Robinson-Foulds Supertrees"
+url = "https://doi.org/10.1101/2020.05.16.099895"
+kind = "theory+algorithm"
+root = "Yu2020"
+status = "todo"
+
+[[paper]]
+id = "smirnov2020"
+family = 7
+order = 32
+authors = "Smirnov, Warnow"
+year = "2020"
+title = "Unblended disjoint tree merging using GTM improves species tree estimation"
+url = "https://doi.org/10.1186/s12864-020-6605-1"
+kind = "theory+algorithm"
+root = "Smirnov2020"
+status = "todo"
+
+[[paper]]
+id = "dinh2021"
+family = 7
+order = 33
+authors = "Dinh, Ho"
+year = "2021"
+title = "Convergence of maximum likelihood supertree reconstruction"
+url = "https://doi.org/10.3934/math.2021513"
+kind = "theory"
+root = "Dinh2021"
+status = "todo"
+
+[[paper]]
+id = "morel2023"
+family = 7
+order = 34
+authors = "Morel, Williams, Stamatakis"
+year = "2023"
+title = "Asteroid: a new algorithm to infer species trees from gene trees under high proportions of missing data."
+url = "https://doi.org/10.1093/bioinformatics/btac832"
+kind = "method"
+root = "Morel2023"
+status = "todo"
+
+[[paper]]
+id = "jansson2023"
+family = 7
+order = 35
+authors = "Jansson, Mampentzidis, Sandhya"
+year = "2023"
+title = "Building a small and informative phylogenetic supertree"
+url = "https://doi.org/10.1016/j.ic.2023.105082"
+kind = "method"
+root = "Jansson2023"
+status = "todo"
+
+[[paper]]
+id = "redelings2023"
+family = 7
+order = 36
+authors = "Redelings, Holder"
+year = "2023"
+title = "Speeding up iterative applications of the Build supertree algorithm"
+url = "https://doi.org/10.1101/2023.11.10.566627"
+kind = "method"
+root = "Redelings2023"
+status = "todo"
+
+[[paper]]
+id = "mcarthur2024"
+family = 7
+order = 37
+authors = "McArthur et al."
+year = "2024"
+title = "Spectral cluster supertree: fast and statistically robust merging of rooted phylogenetic trees"
+url = "https://doi.org/10.3389/fmolb.2024.1432495"
+kind = "theory+algorithm"
+root = "Mcarthur2024"
+status = "todo"
+
+[[paper]]
+id = "karcher2024"
+family = 7
+order = 38
+authors = "Karcher, Zhang, Matsen"
+year = "2024"
+title = "Variational Supertrees for Bayesian Phylogenetics"
+url = "https://doi.org/10.1007/s11538-024-01338-5"
+kind = "method"
+root = "Karcher2024"
 status = "todo"
